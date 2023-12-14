@@ -144,15 +144,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="AgentPointer.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="PathFollowing.h" />
+    <ClInclude Include="PointerFSM.h" />
+    <ClInclude Include="PointerState.h" />
+    <ClInclude Include="PointerStateTemplate.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneFSM.h" />
     <ClInclude Include="SceneGOAP.h" />
     <ClInclude Include="ScenePathFindingMouse.h" />
     <ClInclude Include="SDL_SimpleApp.h" />
     <ClInclude Include="Seek.h" />
+    <ClInclude Include="State_ChaseEnemy.h" />
+    <ClInclude Include="State_FleeEnemy.h" />
+    <ClInclude Include="State_WanderMaze.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
