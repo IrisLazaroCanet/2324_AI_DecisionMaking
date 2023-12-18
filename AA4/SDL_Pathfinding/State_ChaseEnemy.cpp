@@ -9,6 +9,7 @@ void State_ChaseEnemy::Update()
 {
 	//Update state
 	//Apply chase to agent
+	std::cout << "Update chase state" << std::endl;
 }
 
 void State_ChaseEnemy::Exit()

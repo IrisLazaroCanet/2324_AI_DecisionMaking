@@ -20,3 +20,18 @@ void AgentPointer::update(float dtime, SDL_Event* event)
 {
 	currentState->Update();
 }
+
+void AgentPointer::SetStateToWander()
+{
+	ChangeState(wanderMazeState);
+}
+
+void AgentPointer::SetStateToChase()
+{
+	ChangeState(chaseEnemyState);
+}
+
+void AgentPointer::SetStateToFlee()
+{
+	ChangeState(fleeEnemyState);
+}

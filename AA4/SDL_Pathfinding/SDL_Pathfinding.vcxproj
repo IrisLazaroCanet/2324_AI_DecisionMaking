@@ -136,6 +136,7 @@
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PathFollowing.cpp" />
+    <ClCompile Include="PointerFSM.cpp" />
     <ClCompile Include="SceneFSM.cpp" />
     <ClCompile Include="SceneGOAP.cpp" />
     <ClCompile Include="ScenePathFindingMouse.cpp" />

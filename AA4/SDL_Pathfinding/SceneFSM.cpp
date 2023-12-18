@@ -7,61 +7,67 @@ SceneFSM::SceneFSM()
 	draw_grid = false;
 	maze = new Grid("../res/maze.csv");
 
-	loadTextures("../res/maze.png", "../res/coin.png");
+	loadTextures("../res/maze.png");
 
 	srand((unsigned int)time(NULL));
 
-	Agent *agent = new Agent;
-	agent->loadSpriteTexture("../res/soldier.png", 4);
-	agent->setBehavior(new PathFollowing);
-	agent->setTarget(Vector2D(-20,-20));
-	agents.push_back(agent);
+	player = new Agent;
+	player->loadSpriteTexture("../res/soldier.png", 4);
+	player->setBehavior(new PathFollowing);
+	player->setTarget(Vector2D(-20,-20));
 
 	// set agent position coords to the center of a random cell
 	Vector2D rand_cell(-1,-1);
 	while (!maze->isValidCell(rand_cell))
 		rand_cell = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-	agents[0]->setPosition(maze->cell2pix(rand_cell));
-
-	// set the coin in a random cell (but at least 3 cells far from the agent)
-	coinPosition = Vector2D(-1,-1);
-	while ((!maze->isValidCell(coinPosition)) || (Vector2D::Distance(coinPosition, rand_cell)<3))
-		coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-
+	player->setPosition(maze->cell2pix(rand_cell));
 
 	//FSM TEST
-	agentPointer = new AgentPointer(
+	npc = new AgentPointer(
 		new State_WanderMaze(),
 		new State_ChaseEnemy(),
 		new State_FleeEnemy()
 	);
 
-	agentPointer->loadSpriteTexture("../res/soldier.png", 4);
-	agentPointer->setBehavior(new PathFollowing);
-	agentPointer->setTarget(Vector2D(-20, -20));
-	agentPointer->setPosition(maze->cell2pix(Vector2D(0.f, 0.f)));
+	npc->loadSpriteTexture("../res/soldier.png", 4);
+	npc->setBehavior(new PathFollowing);
+	npc->setTarget(Vector2D(-20, -20));
+	npc->setPosition(maze->cell2pix(Vector2D(0.f, 0.f)));
 }
 
 SceneFSM::~SceneFSM()
 {
 	if (background_texture)
 		SDL_DestroyTexture(background_texture);
-	if (coin_texture)
-		SDL_DestroyTexture(coin_texture);
 
-	for (int i = 0; i < (int)agents.size(); i++)
-	{
-		delete agents[i];
-	}
+	delete player;
+	delete npc;
 }
 
-void SceneFSM::update(float dtime, SDL_Event *event)
+void SceneFSM::update(float dtime, SDL_Event* event)
 {
 	/* Keyboard & Mouse events */
 	switch (event->type) {
 	case SDL_KEYDOWN:
 		if (event->key.keysym.scancode == SDL_SCANCODE_SPACE)
 			draw_grid = !draw_grid;
+
+		if (event->key.keysym.scancode == SDL_SCANCODE_7)
+			spotEnemy = !spotEnemy;
+
+		if (event->key.keysym.scancode == SDL_SCANCODE_8)
+			looseEnemy = !looseEnemy;
+
+		if (event->key.keysym.scancode == SDL_SCANCODE_9)
+			enemyHasGun = !enemyHasGun;
+
+		if (event->key.keysym.scancode == SDL_SCANCODE_0)
+			enemyLooseGun = !enemyLooseGun;
+
+		//Test
+		if (event->key.keysym.scancode == SDL_SCANCODE_P)
+			npc->SetStateToFlee();
+
 		break;
 	case SDL_MOUSEMOTION:
 	case SDL_MOUSEBUTTONDOWN:
@@ -69,7 +75,7 @@ void SceneFSM::update(float dtime, SDL_Event *event)
 		{
 			Vector2D cell = maze->pix2cell(Vector2D((float)(event->button.x), (float)(event->button.y)));
 			if (maze->isValidCell(cell)) {
-				agents[0]->addPathPoint(maze->cell2pix(cell));
+				player->addPathPoint(maze->cell2pix(cell));
 			}
 		}
 		break;
@@ -77,23 +83,13 @@ void SceneFSM::update(float dtime, SDL_Event *event)
 		break;
 	}
 
-	agents[0]->update(dtime, event);
-	agentPointer->update(dtime, event);
-
-	// if we have arrived to the coin, replace it in a random cell!
-	if ((agents[0]->getCurrentTargetIndex() == -1) && (maze->pix2cell(agents[0]->getPosition()) == coinPosition))
-	{
-		coinPosition = Vector2D(-1, -1);
-		while ((!maze->isValidCell(coinPosition)) || (Vector2D::Distance(coinPosition, maze->pix2cell(agents[0]->getPosition()))<3))
-			coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-	}
-	
+	player->update(dtime, event);
+	npc->update(dtime, event);
 }
 
 void SceneFSM::draw()
 {
 	drawMaze();
-	drawCoin();
 
 	if (draw_grid)
 	{
@@ -108,8 +104,8 @@ void SceneFSM::draw()
 		}
 	}
 
-	agents[0]->draw();
-	agentPointer->draw();
+	player->draw();
+	npc->draw();
 }
 
 const char* SceneFSM::getTitle()
@@ -143,16 +139,8 @@ void SceneFSM::drawMaze()
 	//SDL_RenderCopy(TheApp::Instance()->getRenderer(), background_texture, NULL, NULL );
 }
 
-void SceneFSM::drawCoin()
-{
-	Vector2D coin_coords = maze->cell2pix(coinPosition);
-	int offset = CELL_SIZE / 2;
-	SDL_Rect dstrect = {(int)coin_coords.x-offset, (int)coin_coords.y - offset, CELL_SIZE, CELL_SIZE};
-	SDL_RenderCopy(TheApp::Instance()->getRenderer(), coin_texture, NULL, &dstrect);
-}
 
-
-bool SceneFSM::loadTextures(char* filename_bg, char* filename_coin)
+bool SceneFSM::loadTextures(char* filename_bg)
 {
 	SDL_Surface *image = IMG_Load(filename_bg);
 	if (!image) {
@@ -160,16 +148,6 @@ bool SceneFSM::loadTextures(char* filename_bg, char* filename_coin)
 		return false;
 	}
 	background_texture = SDL_CreateTextureFromSurface(TheApp::Instance()->getRenderer(), image);
-
-	if (image)
-		SDL_FreeSurface(image);
-
-	image = IMG_Load(filename_coin);
-	if (!image) {
-		cout << "IMG_Load: " << IMG_GetError() << endl;
-		return false;
-	}
-	coin_texture = SDL_CreateTextureFromSurface(TheApp::Instance()->getRenderer(), image);
 
 	if (image)
 		SDL_FreeSurface(image);

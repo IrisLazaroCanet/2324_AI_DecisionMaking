@@ -10,6 +10,9 @@ public:
 	~AgentPointer();
 
 	void update(float dtime, SDL_Event* event) override;
+	void SetStateToWander();
+	void SetStateToChase();
+	void SetStateToFlee();
 
 protected:
 	PointerStateTemplate* wanderMazeState;
