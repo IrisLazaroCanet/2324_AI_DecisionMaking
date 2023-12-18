@@ -1,5 +1,5 @@
-﻿  AgentPointer.cpp
-  State_ChaseEnemy.cpp
+﻿  State_ChaseEnemy.cpp
   State_FleeEnemy.cpp
+  State_WanderMaze.cpp
   Generating Code...
   SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe

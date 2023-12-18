@@ -8,8 +8,8 @@ void State_FleeEnemy::Enter()
 void State_FleeEnemy::Update()
 {
 	//Update code here
-	//Apply flee to agent
-	std::cout << "Update flee state" << std::endl;
+	//TODO: Apply flee to agent
+	//std::cout << "Update flee state" << std::endl;
 }
 
 void State_FleeEnemy::Exit()

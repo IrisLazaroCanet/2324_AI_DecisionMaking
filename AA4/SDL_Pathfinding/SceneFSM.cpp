@@ -65,6 +65,10 @@ void SceneFSM::update(float dtime, SDL_Event* event)
 			enemyLooseGun = !enemyLooseGun;
 
 		//Test
+		if (event->key.keysym.scancode == SDL_SCANCODE_I)
+			npc->SetStateToWander();
+		if (event->key.keysym.scancode == SDL_SCANCODE_O)
+			npc->SetStateToChase();
 		if (event->key.keysym.scancode == SDL_SCANCODE_P)
 			npc->SetStateToFlee();
 

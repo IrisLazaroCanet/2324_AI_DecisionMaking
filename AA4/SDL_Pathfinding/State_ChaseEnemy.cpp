@@ -8,8 +8,8 @@ void State_ChaseEnemy::Enter()
 void State_ChaseEnemy::Update()
 {
 	//Update state
-	//Apply chase to agent
-	std::cout << "Update chase state" << std::endl;
+	//TODO: Apply chase to agent
+	//std::cout << "Update chase state" << std::endl;
 }
 
 void State_ChaseEnemy::Exit()

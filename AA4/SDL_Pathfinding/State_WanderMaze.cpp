@@ -8,8 +8,8 @@ void State_WanderMaze::Enter()
 void State_WanderMaze::Update()
 {
 	//Update state
-	//Apply wander to agent
-	std::cout << "Update wander state" << std::endl;
+	//TODO: Apply wander to agent
+	//std::cout << "Update wander state" << std::endl;
 }
 
 void State_WanderMaze::Exit()

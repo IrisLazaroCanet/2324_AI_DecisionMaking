@@ -7,6 +7,7 @@ AgentPointer::AgentPointer(PointerStateTemplate* _wanderMazeState, PointerStateT
 	fleeEnemyState = _fleeEnemyState;
 
 	currentState = wanderMazeState;
+	currentState->Enter();
 }
 
 AgentPointer::~AgentPointer()
