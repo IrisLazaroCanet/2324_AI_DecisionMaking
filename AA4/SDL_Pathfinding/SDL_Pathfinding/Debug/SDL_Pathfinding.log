@@ -1,12 +1,2 @@
-﻿  Agent.cpp
-  Grid.cpp
-  main.cpp
-  PathFollowing.cpp
-  SceneFSM.cpp
-  SceneGOAP.cpp
-  ScenePathFindingMouse.cpp
-  SDL_SimpleApp.cpp
-  Seek.cpp
-  utils.cpp
-  Generating Code...
-  SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\AA4\bin\SDL_Pathfinding.exe
+﻿  State_WanderMaze.cpp
+  SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe

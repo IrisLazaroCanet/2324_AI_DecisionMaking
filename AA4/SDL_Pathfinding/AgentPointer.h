@@ -5,6 +5,12 @@
 
 class AgentPointer : public Agent, public PointerFSM
 {
+public:
+	AgentPointer(PointerStateTemplate* _wanderMazeState, PointerStateTemplate* _chaseEnemyState, PointerStateTemplate* _fleeEnemyState);
+	~AgentPointer();
+
+	void update(float dtime, SDL_Event* event) override;
+
 protected:
 	PointerStateTemplate* wanderMazeState;
 	PointerStateTemplate* chaseEnemyState;

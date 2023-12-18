@@ -1,5 +1,6 @@
 #pragma once
 #include "PointerStateTemplate.h"
+#include <iostream>
 
 class State_WanderMaze : public PointerStateTemplate
 {

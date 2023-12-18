@@ -58,7 +58,7 @@ public:
 	int getPathSize();
 	Vector2D getPathPoint(int idx);
 	void clearPath();
-	void update(float dtime, SDL_Event *event);
+	virtual void update(float dtime, SDL_Event *event);
 	void draw();
 	bool loadSpriteTexture(char* filename, int num_frames=1);
 	

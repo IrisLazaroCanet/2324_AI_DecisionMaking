@@ -124,7 +124,7 @@ void SceneGOAP::draw()
 
 const char* SceneGOAP::getTitle()
 {
-	return "SDL Path Finding :: PathFinding Mouse Demo";
+	return "SDL Path Finding :: GOAP Demo";
 }
 
 void SceneGOAP::drawMaze()

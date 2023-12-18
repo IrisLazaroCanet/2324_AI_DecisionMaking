@@ -1,0 +1,17 @@
+#include "State_ChaseEnemy.h"
+
+void State_ChaseEnemy::Enter()
+{
+	std::cout << "Enter chase state" << std::endl;
+}
+
+void State_ChaseEnemy::Update()
+{
+	//Update state
+	//Apply chase to agent
+}
+
+void State_ChaseEnemy::Exit()
+{
+	std::cout << "Exit chase state" << std::endl;
+}

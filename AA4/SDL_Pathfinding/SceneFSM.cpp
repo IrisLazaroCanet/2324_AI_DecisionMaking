@@ -28,6 +28,18 @@ SceneFSM::SceneFSM()
 	while ((!maze->isValidCell(coinPosition)) || (Vector2D::Distance(coinPosition, rand_cell)<3))
 		coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
 
+
+	//FSM TEST
+	agentPointer = new AgentPointer(
+		new State_WanderMaze(),
+		new State_ChaseEnemy(),
+		new State_FleeEnemy()
+	);
+
+	agentPointer->loadSpriteTexture("../res/soldier.png", 4);
+	agentPointer->setBehavior(new PathFollowing);
+	agentPointer->setTarget(Vector2D(-20, -20));
+	agentPointer->setPosition(maze->cell2pix(Vector2D(0.f, 0.f)));
 }
 
 SceneFSM::~SceneFSM()
@@ -66,6 +78,7 @@ void SceneFSM::update(float dtime, SDL_Event *event)
 	}
 
 	agents[0]->update(dtime, event);
+	agentPointer->update(dtime, event);
 
 	// if we have arrived to the coin, replace it in a random cell!
 	if ((agents[0]->getCurrentTargetIndex() == -1) && (maze->pix2cell(agents[0]->getPosition()) == coinPosition))
@@ -96,11 +109,12 @@ void SceneFSM::draw()
 	}
 
 	agents[0]->draw();
+	agentPointer->draw();
 }
 
 const char* SceneFSM::getTitle()
 {
-	return "SDL Path Finding :: PathFinding Mouse Demo";
+	return "SDL Path Finding :: FSM Demo";
 }
 
 void SceneFSM::drawMaze()

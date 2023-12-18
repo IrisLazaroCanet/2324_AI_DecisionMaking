@@ -10,6 +10,11 @@
 #include "PathFollowing.h"
 #include "Grid.h"
 
+#include "AgentPointer.h"
+#include "State_WanderMaze.h"
+#include "State_ChaseEnemy.h"
+#include "State_FleeEnemy.h"
+
 class SceneFSM :
 	public Scene
 {
@@ -22,6 +27,8 @@ public:
 private:
 	std::vector<Agent*> agents;
 	Vector2D coinPosition;
+
+	AgentPointer* agentPointer;
 
 	Grid *maze;
 	bool draw_grid;

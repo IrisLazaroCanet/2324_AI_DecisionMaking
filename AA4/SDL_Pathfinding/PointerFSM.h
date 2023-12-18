@@ -1,7 +1,8 @@
 #pragma once
-#include "PointerState.h"
+#include "PointerStateTemplate.h"
 
 class PointerFSM
 {
-	PointerState* currentState;
+protected:
+	PointerStateTemplate* currentState;
 };

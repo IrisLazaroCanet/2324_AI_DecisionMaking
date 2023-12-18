@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="AgentPointer.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PathFollowing.cpp" />
@@ -140,6 +141,9 @@
     <ClCompile Include="ScenePathFindingMouse.cpp" />
     <ClCompile Include="SDL_SimpleApp.cpp" />
     <ClCompile Include="Seek.cpp" />
+    <ClCompile Include="State_ChaseEnemy.cpp" />
+    <ClCompile Include="State_FleeEnemy.cpp" />
+    <ClCompile Include="State_WanderMaze.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
