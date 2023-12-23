@@ -136,6 +136,11 @@
     <ClCompile Include="FSMState_Chase.cpp" />
     <ClCompile Include="FSMState_Evade.cpp" />
     <ClCompile Include="FSMState_Patrol.cpp" />
+    <ClCompile Include="GOAPAction.cpp" />
+    <ClCompile Include="GOAPAction_Aim.cpp" />
+    <ClCompile Include="GOAPAction_Patrol.cpp" />
+    <ClCompile Include="GOAPAction_Shoot.cpp" />
+    <ClCompile Include="GOAPWorldState.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PathFollowing.cpp" />
@@ -150,6 +155,11 @@
     <ClInclude Include="Agent.h" />
     <ClInclude Include="DecisionMakingAlgorithm.h" />
     <ClInclude Include="FSM.h" />
+    <ClInclude Include="GOAPAction.h" />
+    <ClInclude Include="GOAPAction_Aim.h" />
+    <ClInclude Include="GOAPAction_Patrol.h" />
+    <ClInclude Include="GOAPAction_Shoot.h" />
+    <ClInclude Include="GOAPWorldState.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="PathFollowing.h" />
