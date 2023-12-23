@@ -141,6 +141,7 @@
     <ClCompile Include="FSMState_Chase.cpp" />
     <ClCompile Include="FSMState_Evade.cpp" />
     <ClCompile Include="FSMState_Patrol.cpp" />
+    <ClCompile Include="GOAP.cpp" />
     <ClCompile Include="GOAPAction.cpp" />
     <ClCompile Include="GOAPAction_Aim.cpp" />
     <ClCompile Include="GOAPAction_Patrol.cpp" />
@@ -167,10 +168,10 @@
     <ClInclude Include="CohesionBehavior.h" />
     <ClInclude Include="CollisionAvoidanceBehavior.h" />
     <ClInclude Include="Constants.h" />
-    <ClInclude Include="DecisionMakingAlgorithm.h" />
     <ClInclude Include="FleeBehavior.h" />
     <ClInclude Include="FlockingBehavior.h" />
     <ClInclude Include="FSM.h" />
+    <ClInclude Include="GOAP.h" />
     <ClInclude Include="GOAPAction.h" />
     <ClInclude Include="GOAPAction_Aim.h" />
     <ClInclude Include="GOAPAction_Patrol.h" />

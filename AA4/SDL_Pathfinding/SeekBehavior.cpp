@@ -11,21 +11,21 @@ SeekBehavior::~SeekBehavior()
 Vector2D SeekBehavior::CalculateForces(Agent* agent, Vector2D target, float dtime)
 {
 	//Calculate desired velocity
-	Vector2D desiredVelocity = target - agent->position;
+	Vector2D desiredVelocity = target - agent->getPosition();
 	desiredVelocity.Normalize();
-	desiredVelocity *= agent->max_velocity;
+	desiredVelocity *= agent->getMaxVelocity();
 
 	//Steering force, without acceleration
-	Vector2D steeringForce = (desiredVelocity - agent->velocity);
-	steeringForce /= agent->max_velocity;
-	steeringForce *= agent->max_force;
+	Vector2D steeringForce = (desiredVelocity - agent->getVelocity());
+	steeringForce /= agent->getMaxVelocity();
+	steeringForce *= agent->getMaxForce();
 
 	//Steering force, with acceleration
-	steeringForce = steeringForce / agent->mass;
+	steeringForce = steeringForce / agent->getMass();
 	return steeringForce;
 }
 
 Vector2D SeekBehavior::CalculateForces(Agent* agent, Agent* target, float dtime)
 {
-	return CalculateForces(agent, target->position, dtime);
+	return CalculateForces(agent, target->getPosition(), dtime);
 }

@@ -29,5 +29,5 @@ Vector2D WeightedBlendingBehavior::CalculateForces(Agent* agent, Vector2D target
 
 Vector2D WeightedBlendingBehavior::CalculateForces(Agent* agent, Agent* target, float dtime)
 {
-	return CalculateForces(agent, target->position, dtime);
+	return CalculateForces(agent, target->getPosition(), dtime);
 }

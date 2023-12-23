@@ -102,6 +102,9 @@
     <ClCompile Include="WeightedBlendingBehavior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GOAP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -155,9 +158,6 @@
     <ClInclude Include="FSM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DecisionMakingAlgorithm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GOAPWorldState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -204,6 +204,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SeparationBehavior.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GOAP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

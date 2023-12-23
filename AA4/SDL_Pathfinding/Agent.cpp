@@ -140,6 +140,11 @@ void Agent::clearPath()
 	path.points.clear();
 }
 
+void Agent::setBrain(DecisionMakingAlgorithm* brain)
+{
+	this->brain = brain;
+}
+
 void Agent::setCurrentTargetIndex(int idx)
 {
 	currentTargetIndex = idx;

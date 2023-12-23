@@ -14,6 +14,7 @@ SceneFSM::SceneFSM()
 	Agent* agent = new Agent;
 	agent->loadSpriteTexture("../res/soldier.png", 4);
 	agent->setBehavior(new PathFollowing);
+	agent->setBrain(new FSM(new FSMState_Patrol));
 	agent->setTarget(Vector2D(-20, -20));
 	agents.push_back(agent);
 

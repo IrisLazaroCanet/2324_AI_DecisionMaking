@@ -82,5 +82,5 @@ Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Vector2D targ
 
 Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Agent* target, float dtime)
 {
-	return CalculateForces(agent, target->position, dtime);
+	return CalculateForces(agent, target->getPosition(), dtime);
 }

@@ -7,11 +7,6 @@ void FSM::ChangeState(FSMState* newState)
 	currentState->Enter();
 }
 
-FSM::FSM(FSMState* _currentState)
-{
-	currentState = _currentState;
-}
-
 FSM::~FSM()
 {
 	delete currentState;

@@ -1,8 +1,8 @@
 #pragma once
 #include "FSMState.h"
-#include "DecisionMakingAlgorithm.h"
+#include "Agent.h"
 
-class FSM : public DecisionMakingAlgorithm
+class FSM : public Agent::DecisionMakingAlgorithm
 {
 private:
 	FSMState* currentState;
@@ -10,7 +10,7 @@ private:
 	void ChangeState(FSMState* newState);
 
 public:
-	FSM(FSMState* _currentState);
+	FSM(FSMState* _currentState) { currentState = _currentState; }
 	~FSM();
 
 	void Update(Agent* agent, float dtime) override;

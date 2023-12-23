@@ -9,6 +9,8 @@
 #include "Seek.h"
 #include "PathFollowing.h"
 #include "Grid.h"
+#include "FSM.h"
+#include "FSMState_Patrol.h"
 
 class SceneFSM :
 	public Scene
