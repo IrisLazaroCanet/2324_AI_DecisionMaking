@@ -7,6 +7,8 @@
 #include "Vector2D.h"
 #include "utils.h"
 
+#include "DecisionMakingAlgorithm.h"
+
 
 class Agent
 {
@@ -19,6 +21,7 @@ public:
 		virtual void applySteeringForce(Agent *agent, float dtime) {};
 	};
 private:
+	// Steering behaviors
 	SteeringBehavior *steering_behaviour;
 	Vector2D position;
 	Vector2D velocity;
@@ -28,6 +31,9 @@ private:
 	Path path;
 	int currentTargetIndex;
 
+	// Decision making
+	DecisionMakingAlgorithm* brain;
+	
 	float mass;
 	float orientation;
 	float max_force;

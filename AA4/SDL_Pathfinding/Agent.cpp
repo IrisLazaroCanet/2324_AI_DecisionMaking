@@ -91,6 +91,9 @@ void Agent::update(float dtime, SDL_Event *event)
 		break;
 	}
 
+	// Update decisions
+	brain->Update(this, dtime);
+
 	// Apply the steering behavior
 	steering_behaviour->applySteeringForce(this, dtime);
 	

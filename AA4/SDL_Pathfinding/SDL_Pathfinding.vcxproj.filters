@@ -45,19 +45,16 @@
     <ClCompile Include="SceneGOAP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="State_FleeEnemy.cpp">
+    <ClCompile Include="FSMState_Chase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="State_ChaseEnemy.cpp">
+    <ClCompile Include="FSMState_Evade.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="State_WanderMaze.cpp">
+    <ClCompile Include="FSMState_Patrol.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AgentPointer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PointerFSM.cpp">
+    <ClCompile Include="FSM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -98,25 +95,22 @@
     <ClInclude Include="SceneGOAP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PointerState.h">
+    <ClInclude Include="FSMState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PointerStateTemplate.h">
+    <ClInclude Include="FSMState_Patrol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="State_WanderMaze.h">
+    <ClInclude Include="FSMState_Chase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="State_ChaseEnemy.h">
+    <ClInclude Include="FSMState_Evade.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="State_FleeEnemy.h">
+    <ClInclude Include="FSM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AgentPointer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PointerFSM.h">
+    <ClInclude Include="DecisionMakingAlgorithm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
