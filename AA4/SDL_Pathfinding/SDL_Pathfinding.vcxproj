@@ -132,6 +132,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="AllignmentBehavior.cpp" />
+    <ClCompile Include="CohesionBehavior.cpp" />
+    <ClCompile Include="CollisionAvoidanceBehavior.cpp" />
+    <ClCompile Include="FleeBehavior.cpp" />
+    <ClCompile Include="FlockingBehavior.cpp" />
     <ClCompile Include="FSM.cpp" />
     <ClCompile Include="FSMState_Chase.cpp" />
     <ClCompile Include="FSMState_Evade.cpp" />
@@ -144,16 +149,27 @@
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PathFollowing.cpp" />
+    <ClCompile Include="PriorityBlendingBehavior.cpp" />
     <ClCompile Include="SceneFSM.cpp" />
     <ClCompile Include="SceneGOAP.cpp" />
     <ClCompile Include="ScenePathFindingMouse.cpp" />
     <ClCompile Include="SDL_SimpleApp.cpp" />
     <ClCompile Include="Seek.cpp" />
+    <ClCompile Include="SeekBehavior.cpp" />
+    <ClCompile Include="SeparationBehavior.cpp" />
+    <ClCompile Include="SteeringBehavior.cpp" />
     <ClCompile Include="utils.cpp" />
+    <ClCompile Include="WeightedBlendingBehavior.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="AllignmentBehavior.h" />
+    <ClInclude Include="CohesionBehavior.h" />
+    <ClInclude Include="CollisionAvoidanceBehavior.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="DecisionMakingAlgorithm.h" />
+    <ClInclude Include="FleeBehavior.h" />
+    <ClInclude Include="FlockingBehavior.h" />
     <ClInclude Include="FSM.h" />
     <ClInclude Include="GOAPAction.h" />
     <ClInclude Include="GOAPAction_Aim.h" />
@@ -164,6 +180,7 @@
     <ClInclude Include="Path.h" />
     <ClInclude Include="PathFollowing.h" />
     <ClInclude Include="FSMState.h" />
+    <ClInclude Include="PriorityBlendingBehavior.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneFSM.h" />
     <ClInclude Include="SceneGOAP.h" />
@@ -173,8 +190,12 @@
     <ClInclude Include="FSMState_Chase.h" />
     <ClInclude Include="FSMState_Evade.h" />
     <ClInclude Include="FSMState_Patrol.h" />
+    <ClInclude Include="SeekBehavior.h" />
+    <ClInclude Include="SeparationBehavior.h" />
+    <ClInclude Include="SteeringBehavior.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="WeightedBlendingBehavior.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\res\spritesheet.png" />

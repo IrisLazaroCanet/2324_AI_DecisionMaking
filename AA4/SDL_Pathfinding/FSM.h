@@ -2,7 +2,7 @@
 #include "FSMState.h"
 #include "DecisionMakingAlgorithm.h"
 
-class FSM : DecisionMakingAlgorithm
+class FSM : public DecisionMakingAlgorithm
 {
 private:
 	FSMState* currentState;

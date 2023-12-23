@@ -1,4 +1,76 @@
-﻿  SceneFSM.cpp
+﻿  Agent.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.cpp(26,3): warning C4150: deletion of pointer to incomplete type 'SteeringBehavior'; no destructor called
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(14): message : see declaration of 'SteeringBehavior'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.cpp(100,7): error C2027: use of undefined type 'DecisionMakingAlgorithm'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(26): message : see declaration of 'DecisionMakingAlgorithm'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.cpp(103,18): error C2027: use of undefined type 'SteeringBehavior'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(14): message : see declaration of 'SteeringBehavior'
+  AllignmentBehavior.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\AllignmentBehavior.cpp(37,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CohesionBehavior.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\CohesionBehavior.cpp(38,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CollisionAvoidanceBehavior.cpp
+  FleeBehavior.cpp
+  FlockingBehavior.cpp
+  FSM.cpp
+  FSMState_Chase.cpp
+  FSMState_Evade.cpp
+  FSMState_Patrol.cpp
+  GOAPAction.cpp
+  GOAPAction_Aim.cpp
+  GOAPAction_Patrol.cpp
+  GOAPAction_Shoot.cpp
+  Grid.cpp
   main.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Seek.h(5,16): error C2039: 'SteeringBehavior': is not a member of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(11): message : see declaration of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Seek.h(6,1): error C2504: 'SteeringBehavior': base class undefined
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\PathFollowing.h(6,16): error C2039: 'SteeringBehavior': is not a member of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(11): message : see declaration of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\PathFollowing.h(7,1): error C2504: 'SteeringBehavior': base class undefined
+  PathFollowing.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\PathFollowing.h(6,16): error C2039: 'SteeringBehavior': is not a member of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(11): message : see declaration of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\PathFollowing.h(7,1): error C2504: 'SteeringBehavior': base class undefined
+  PriorityBlendingBehavior.cpp
+  SceneFSM.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Seek.h(5,16): error C2039: 'SteeringBehavior': is not a member of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(11): message : see declaration of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Seek.h(6,1): error C2504: 'SteeringBehavior': base class undefined
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\PathFollowing.h(6,16): error C2039: 'SteeringBehavior': is not a member of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(11): message : see declaration of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\PathFollowing.h(7,1): error C2504: 'SteeringBehavior': base class undefined
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SceneFSM.cpp(16,38): error C2664: 'void Agent::setBehavior(SteeringBehavior *)': cannot convert argument 1 from 'PathFollowing *' to 'SteeringBehavior *'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SceneFSM.cpp(16,21): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(72,7): message : see declaration of 'Agent::setBehavior'
+  SceneGOAP.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Seek.h(5,16): error C2039: 'SteeringBehavior': is not a member of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(11): message : see declaration of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Seek.h(6,1): error C2504: 'SteeringBehavior': base class undefined
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\PathFollowing.h(6,16): error C2039: 'SteeringBehavior': is not a member of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(11): message : see declaration of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\PathFollowing.h(7,1): error C2504: 'SteeringBehavior': base class undefined
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SceneGOAP.cpp(19,38): error C2664: 'void Agent::setBehavior(SteeringBehavior *)': cannot convert argument 1 from 'PathFollowing *' to 'SteeringBehavior *'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SceneGOAP.cpp(19,21): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(72,7): message : see declaration of 'Agent::setBehavior'
   Generating Code...
-  SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe
+  Compiling...
+  ScenePathFindingMouse.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Seek.h(5,16): error C2039: 'SteeringBehavior': is not a member of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(11): message : see declaration of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Seek.h(6,1): error C2504: 'SteeringBehavior': base class undefined
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\PathFollowing.h(6,16): error C2039: 'SteeringBehavior': is not a member of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(11): message : see declaration of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\PathFollowing.h(7,1): error C2504: 'SteeringBehavior': base class undefined
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\ScenePathFindingMouse.cpp(16,38): error C2664: 'void Agent::setBehavior(SteeringBehavior *)': cannot convert argument 1 from 'PathFollowing *' to 'SteeringBehavior *'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\ScenePathFindingMouse.cpp(16,21): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(72,7): message : see declaration of 'Agent::setBehavior'
+  Seek.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Seek.h(5,16): error C2039: 'SteeringBehavior': is not a member of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Agent.h(11): message : see declaration of 'Agent'
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Seek.h(6,1): error C2504: 'SteeringBehavior': base class undefined
+  SeekBehavior.cpp
+  SeparationBehavior.cpp
+  SteeringBehavior.cpp
+  WeightedBlendingBehavior.cpp
+  Generating Code...
