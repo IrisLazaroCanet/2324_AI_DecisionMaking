@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\FSM">
+      <UniqueIdentifier>{10f44c78-17da-4a89-bb28-e2c172131d43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GOAP">
+      <UniqueIdentifier>{621cfabc-34c8-48ff-a7a4-8f360a76663f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FMS">
+      <UniqueIdentifier>{675a8afd-5d13-4696-97fb-83b2ea3b6fc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GOAP">
+      <UniqueIdentifier>{ef49be1f-0436-4bc4-a0e6-2a0f0fae4b84}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp">
@@ -37,39 +49,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneFSM.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneGOAP.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FSMState_Chase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FSMState_Evade.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FSMState_Patrol.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FSM.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GOAPWorldState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GOAPAction.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GOAPAction_Patrol.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GOAPAction_Aim.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GOAPAction_Shoot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AllignmentBehavior.cpp">
@@ -102,8 +81,41 @@
     <ClCompile Include="WeightedBlendingBehavior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FSM.cpp">
+      <Filter>Source Files\FMS</Filter>
+    </ClCompile>
+    <ClCompile Include="FSMState_Chase.cpp">
+      <Filter>Source Files\FMS</Filter>
+    </ClCompile>
+    <ClCompile Include="FSMState_Evade.cpp">
+      <Filter>Source Files\FMS</Filter>
+    </ClCompile>
+    <ClCompile Include="FSMState_Patrol.cpp">
+      <Filter>Source Files\FMS</Filter>
+    </ClCompile>
     <ClCompile Include="GOAP.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GOAP</Filter>
+    </ClCompile>
+    <ClCompile Include="GOAPAction.cpp">
+      <Filter>Source Files\GOAP</Filter>
+    </ClCompile>
+    <ClCompile Include="GOAPAction_Aim.cpp">
+      <Filter>Source Files\GOAP</Filter>
+    </ClCompile>
+    <ClCompile Include="GOAPAction_Patrol.cpp">
+      <Filter>Source Files\GOAP</Filter>
+    </ClCompile>
+    <ClCompile Include="GOAPAction_Shoot.cpp">
+      <Filter>Source Files\GOAP</Filter>
+    </ClCompile>
+    <ClCompile Include="GOAPWorldState.cpp">
+      <Filter>Source Files\GOAP</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGOAP.cpp">
+      <Filter>Source Files\GOAP</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneFSM.cpp">
+      <Filter>Source Files\FMS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -135,42 +147,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Vector2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneFSM.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneGOAP.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FSMState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FSMState_Patrol.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FSMState_Chase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FSMState_Evade.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FSM.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GOAPWorldState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GOAPAction.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GOAPAction_Patrol.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GOAPAction_Aim.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GOAPAction_Shoot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WeightedBlendingBehavior.h">
@@ -206,8 +182,44 @@
     <ClInclude Include="SeparationBehavior.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FSM.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="FSMState.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="FSMState_Chase.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="FSMState_Evade.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="FSMState_Patrol.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
     <ClInclude Include="GOAP.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GOAP</Filter>
+    </ClInclude>
+    <ClInclude Include="GOAPAction.h">
+      <Filter>Header Files\GOAP</Filter>
+    </ClInclude>
+    <ClInclude Include="GOAPAction_Aim.h">
+      <Filter>Header Files\GOAP</Filter>
+    </ClInclude>
+    <ClInclude Include="GOAPAction_Patrol.h">
+      <Filter>Header Files\GOAP</Filter>
+    </ClInclude>
+    <ClInclude Include="GOAPAction_Shoot.h">
+      <Filter>Header Files\GOAP</Filter>
+    </ClInclude>
+    <ClInclude Include="GOAPWorldState.h">
+      <Filter>Header Files\GOAP</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneFSM.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGOAP.h">
+      <Filter>Header Files\GOAP</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
