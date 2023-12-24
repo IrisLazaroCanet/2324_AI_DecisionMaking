@@ -1,7 +1,8 @@
 #include "FSMState_Evade.h"
 
-void FSMState_Evade::Enter(/*Agent* agent, float dtime*/)
+void FSMState_Evade::Enter(Agent* agent, float dtime)
 {
+	
 }
 
 FSMState* FSMState_Evade::Update(Agent* agent, float dtime)
@@ -19,6 +20,6 @@ FSMState* FSMState_Evade::Update(Agent* agent, float dtime)
 	return nullptr;
 }
 
-void FSMState_Evade::Exit(/*Agent* agent, float dtime*/)
+void FSMState_Evade::Exit(Agent* agent, float dtime)
 {
 }

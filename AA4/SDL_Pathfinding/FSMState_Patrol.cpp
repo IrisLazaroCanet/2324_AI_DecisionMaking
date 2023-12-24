@@ -1,6 +1,6 @@
 #include "FSMState_Patrol.h"
 
-void FSMState_Patrol::Enter(/*Agent* agent, float dtime*/)
+void FSMState_Patrol::Enter(Agent* agent, float dtime)
 {
 }
 
@@ -19,6 +19,6 @@ FSMState* FSMState_Patrol::Update(Agent* agent, float dtime)
 	return nullptr;
 }
 
-void FSMState_Patrol::Exit(/*Agent* agent, float dtime*/)
+void FSMState_Patrol::Exit(Agent* agent, float dtime)
 {
 }
