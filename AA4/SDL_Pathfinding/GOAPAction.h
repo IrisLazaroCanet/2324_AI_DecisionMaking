@@ -13,5 +13,6 @@ public:
 	~GOAPAction() { }
 	void SetPreconditions(int idx, bool value);
 	void SetEffect(int idx, bool value);
+	bool IsAchievable(const GOAPWorldState& worldState) const;
 	virtual void Update(Agent* agent, float dtime) = 0;
 };
