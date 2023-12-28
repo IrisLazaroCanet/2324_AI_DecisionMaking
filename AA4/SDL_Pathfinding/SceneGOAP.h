@@ -9,6 +9,7 @@
 #include "Seek.h"
 #include "PathFollowing.h"
 #include "Grid.h"
+#include "GOAP.h"
 
 class SceneGOAP :
 	public Scene

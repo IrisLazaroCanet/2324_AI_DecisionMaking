@@ -11,7 +11,7 @@ class GOAP : public Agent::DecisionMakingAlgorithm
 {
 private:
 	std::vector<std::string> atomNames;
-	std::unordered_map<std::string, GOAPAction> actions;
+	std::unordered_map<std::string, GOAPAction*> actions;
 	GOAPWorldState start;	//??
 	GOAPWorldState goal;	//??
 	std::vector<GOAPAction*> plan;
@@ -20,6 +20,8 @@ private:
 	void AStar(GOAPWorldState start, GOAPWorldState goal);
 
 public:
+	GOAP();
+	~GOAP();
 	void Update(Agent* agent, float dtime) override;
 
 };

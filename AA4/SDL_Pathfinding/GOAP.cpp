@@ -5,6 +5,14 @@ void GOAP::AStar(GOAPWorldState start, GOAPWorldState goal)
 	//Adapt A* from nodes to GOAP world states
 }
 
+GOAP::GOAP()
+{
+}
+
+GOAP::~GOAP()
+{
+}
+
 void GOAP::Update(Agent* agent, float dtime)
 {
 	//...
