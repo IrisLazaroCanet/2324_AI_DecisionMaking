@@ -6,6 +6,7 @@
 #include "Path.h"
 #include "Vector2D.h"
 #include "utils.h"
+#include <array>
 
 class Agent
 {
@@ -56,6 +57,12 @@ private:
 	int sprite_w;
 	int sprite_h;
 
+	/////////////ADDED
+	float _velocityTransitionTimer;
+	float _velocityTransitionDuration;
+	float _startVelocity;
+	float _startForce;
+
 public:
 	Agent();
 	~Agent();
@@ -93,4 +100,108 @@ public:
 	
 	bool loadSpriteTexture(char* filename, int num_frames=1);
 	
+
+
+
+	////////////////////////////////////////////////////////ADDED
+
+	void toggleHasGun() { setHasGun(!_hasGun); }
+	bool hasGun() { return _hasGun; }
+	void setHasGun(const bool& hasGun) {
+		_hasGun = hasGun;
+		_hasGun ? SetRedForward() : SetGreenForward();
+	}
+
+	void SetRedForward() { _forwardColor = &_redColor; }
+	void SetYellowForward() { _forwardColor = &_yellowColor; }
+	void SetGreenForward() { _forwardColor = &_greenColor; }
+
+	bool _hasGun;
+	float default_max_velocity;
+	float default_max_force;
+
+	float flee_max_velocity = 210.0f;
+	float flee_max_force = 170.0f;
+
+	float chase_max_velocity = 180.0f;
+	float chase_max_force = 150.0f;
+
+	float wander_max_velocity = 90.0f;
+	float wander_max_force = 150.0f;
+
+	float wanderAngle = 0.0f;
+	float wanderOffset = 200.0f;
+	float wanderRadius = 20.0f;
+	float wanderMaxChange = 0.9f;
+
+	bool _drawForward = false;
+	std::array<const int, 3>* _forwardColor;
+	std::array<const int, 3> _redColor;
+	std::array<const int, 3> _greenColor;
+	std::array<const int, 3> _yellowColor;
+
+
+
+	//DMA
+	float _velocityTransitionTimer;
+	float _velocityTransitionDuration;
+
+	float _startVelocity;
+	float _startForce;
+
+
+	void setDMA(DecisionMakingAlgorithm* decisionMakingAlgorithm)
+	{
+
+	}
+
+	virtual Agent* getEnemy() const { return nullptr; }
+	virtual float getSightDistance() const { return 0.0f; }
+	virtual bool isEnemyInSight() { return false; }
+
+	float getLoseDistance() const { return getSightDistance() + 50.0f; }
+	virtual bool hasLostEnemySight() { return false; }
+
+	float GetVelocityTransitionDuration() const
+	{
+		return _velocityTransitionDuration;
+	}
+
+	float GetVelocityTransitionTimer() const
+	{
+		return _velocityTransitionTimer;
+	}
+	void AddVelocityTransitionTimer(const float& amount)
+	{
+		_velocityTransitionTimer += amount;
+
+		if (_velocityTransitionTimer > _velocityTransitionDuration)
+			_velocityTransitionTimer = _velocityTransitionDuration;
+	}
+	void ResetVelocityTransitionTimer()
+	{
+		_velocityTransitionTimer = 0.0f;
+	}
+
+	void SetStartVelocityAndForce(const float& startVelocity, const float& startForce)
+	{
+		_startVelocity = startVelocity;
+		_startForce = startForce;
+	}
+	void UpdateVelocityAndForce(const float& timeAmount, const float& endVelocity, const float& endForce) 
+	{
+		AddVelocityTransitionTimer(timeAmount);
+
+		float t = GetVelocityTransitionTimer() / GetVelocityTransitionDuration();
+		float velocity = ((1.0f - t) * _startVelocity) + (t * endVelocity);
+		float force = ((1.0f - t) * _startForce) + (t * endForce);
+
+		setMaxVelocityAndForce(velocity, force);
+	}
+
+	void setMaxVelocityAndForce(const float& maxVelocity, const float& maxForce)
+	{
+		max_velocity = maxVelocity;
+		max_force = maxForce;
+	}
 };
