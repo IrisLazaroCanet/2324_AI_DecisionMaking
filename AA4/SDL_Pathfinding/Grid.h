@@ -25,4 +25,5 @@ public:
 	int getCellValue(Vector2D cell);
 	int getNumCellX();
 	int getNumCellY();
+	std::vector<std::vector<int>> getTerrain() { return terrain; }
 };

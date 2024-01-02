@@ -25,60 +25,54 @@
     <Filter Include="Source Files\GOAP">
       <UniqueIdentifier>{ef49be1f-0436-4bc4-a0e6-2a0f0fae4b84}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Pathfinding">
+      <UniqueIdentifier>{1c0ca1d7-4af5-49c1-a585-721a73a74991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Pathfinding\Search algorithms">
+      <UniqueIdentifier>{21613e78-ad70-4584-8dce-9306258598ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Pathfinding\Data classes">
+      <UniqueIdentifier>{a95e6b68-5a5c-4ecb-aa95-a1cf27fa4132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pathfinding">
+      <UniqueIdentifier>{cdc4af9d-a7ef-4210-9dfc-82a1acd30088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pathfinding\Data classes">
+      <UniqueIdentifier>{c262607b-5362-441b-afc5-7ffb0d3458e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Steering behaviors">
+      <UniqueIdentifier>{c5ba06f7-3d07-4275-94e8-979ba5611101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Steering behaviors">
+      <UniqueIdentifier>{cad25bef-feea-4df1-8a91-9bb751a22f5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pathfinding\Search algorithms">
+      <UniqueIdentifier>{791ae7b4-fe87-4c34-b585-1997f34b4acf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Pathfinding\Heuristics">
+      <UniqueIdentifier>{ce332152-f88d-478c-8c2b-f36eb5b24c05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pathfinding\Heuristics">
+      <UniqueIdentifier>{3fe59e3d-a3ca-407d-9538-e691e70aea86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{4326ee36-4024-40ec-9f82-f0161f5240aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{cb5726de-b336-452d-9695-4ef5312b855e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Grid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PathFollowing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ScenePathFindingMouse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SDL_SimpleApp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Seek.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AllignmentBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CohesionBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionAvoidanceBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FleeBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FlockingBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PriorityBlendingBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SeekBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SeparationBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SteeringBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WeightedBlendingBehavior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FSM.cpp">
@@ -117,18 +111,78 @@
     <ClCompile Include="SceneFSM.cpp">
       <Filter>Source Files\FMS</Filter>
     </ClCompile>
+    <ClCompile Include="Connection.cpp">
+      <Filter>Source Files\Pathfinding\Data classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Source Files\Pathfinding\Data classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files\Pathfinding\Data classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AllignmentBehavior.cpp">
+      <Filter>Source Files\Steering behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="CohesionBehavior.cpp">
+      <Filter>Source Files\Steering behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionAvoidanceBehavior.cpp">
+      <Filter>Source Files\Steering behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="FlockingBehavior.cpp">
+      <Filter>Source Files\Steering behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="FleeBehavior.cpp">
+      <Filter>Source Files\Steering behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="PriorityBlendingBehavior.cpp">
+      <Filter>Source Files\Steering behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="Seek.cpp">
+      <Filter>Source Files\Steering behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekBehavior.cpp">
+      <Filter>Source Files\Steering behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="SeparationBehavior.cpp">
+      <Filter>Source Files\Steering behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehavior.cpp">
+      <Filter>Source Files\Steering behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="WeightedBlendingBehavior.cpp">
+      <Filter>Source Files\Steering behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="FrontierElement.cpp">
+      <Filter>Source Files\Pathfinding\Data classes</Filter>
+    </ClCompile>
+    <ClCompile Include="HeuristicCalculator.cpp">
+      <Filter>Source Files\Pathfinding\Heuristics</Filter>
+    </ClCompile>
+    <ClCompile Include="ChebyshevDistance.cpp">
+      <Filter>Source Files\Pathfinding\Heuristics</Filter>
+    </ClCompile>
+    <ClCompile Include="DiagonalDistance.cpp">
+      <Filter>Source Files\Pathfinding\Heuristics</Filter>
+    </ClCompile>
+    <ClCompile Include="EuclideanDistance.cpp">
+      <Filter>Source Files\Pathfinding\Heuristics</Filter>
+    </ClCompile>
+    <ClCompile Include="ManhattanDistance.cpp">
+      <Filter>Source Files\Pathfinding\Heuristics</Filter>
+    </ClCompile>
+    <ClCompile Include="OctileDistance.cpp">
+      <Filter>Source Files\Pathfinding\Heuristics</Filter>
+    </ClCompile>
+    <ClCompile Include="PathFollowing.cpp">
+      <Filter>Source Files\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Grid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Path.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PathFollowing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
@@ -138,48 +192,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SDL_SimpleApp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Seek.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WeightedBlendingBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FleeBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SeekBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SteeringBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AllignmentBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CohesionBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionAvoidanceBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FlockingBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PriorityBlendingBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SeparationBehavior.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FSM.h">
@@ -220,6 +232,96 @@
     </ClInclude>
     <ClInclude Include="SceneGOAP.h">
       <Filter>Header Files\GOAP</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfindingAlgorithm.h">
+      <Filter>Header Files\Pathfinding\Search algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files\Pathfinding\Data classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files\Pathfinding\Data classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection.h">
+      <Filter>Header Files\Pathfinding\Data classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Header Files\Pathfinding\Data classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Header Files\Pathfinding\Data classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AllignmentBehavior.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionAvoidanceBehavior.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="CohesionBehavior.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="FleeBehavior.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="FlockingBehavior.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityBlendingBehavior.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="Seek.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekBehavior.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="SeparationBehavior.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehavior.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="WeightedBlendingBehavior.h">
+      <Filter>Header Files\Steering behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="FrontierElement.h">
+      <Filter>Header Files\Pathfinding\Data classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AStarAlgorithm.h">
+      <Filter>Header Files\Pathfinding\Search algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="HeuristicCalculator.h">
+      <Filter>Header Files\Pathfinding\Heuristics</Filter>
+    </ClInclude>
+    <ClInclude Include="HeuristicFunction.h">
+      <Filter>Header Files\Pathfinding\Heuristics</Filter>
+    </ClInclude>
+    <ClInclude Include="ChebyshevDistance.h">
+      <Filter>Header Files\Pathfinding\Heuristics</Filter>
+    </ClInclude>
+    <ClInclude Include="DiagonalDistance.h">
+      <Filter>Header Files\Pathfinding\Heuristics</Filter>
+    </ClInclude>
+    <ClInclude Include="EuclideanDistance.h">
+      <Filter>Header Files\Pathfinding\Heuristics</Filter>
+    </ClInclude>
+    <ClInclude Include="ManhattanDistance.h">
+      <Filter>Header Files\Pathfinding\Heuristics</Filter>
+    </ClInclude>
+    <ClInclude Include="OctileDistance.h">
+      <Filter>Header Files\Pathfinding\Heuristics</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFollowing.h">
+      <Filter>Header Files\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Header Files\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

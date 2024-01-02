@@ -133,10 +133,15 @@
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="AllignmentBehavior.cpp" />
+    <ClCompile Include="ChebyshevDistance.cpp" />
     <ClCompile Include="CohesionBehavior.cpp" />
     <ClCompile Include="CollisionAvoidanceBehavior.cpp" />
+    <ClCompile Include="Connection.cpp" />
+    <ClCompile Include="DiagonalDistance.cpp" />
+    <ClCompile Include="EuclideanDistance.cpp" />
     <ClCompile Include="FleeBehavior.cpp" />
     <ClCompile Include="FlockingBehavior.cpp" />
+    <ClCompile Include="FrontierElement.cpp" />
     <ClCompile Include="FSM.cpp" />
     <ClCompile Include="FSMState_Chase.cpp" />
     <ClCompile Include="FSMState_Evade.cpp" />
@@ -147,8 +152,12 @@
     <ClCompile Include="GOAPAction_Patrol.cpp" />
     <ClCompile Include="GOAPAction_Shoot.cpp" />
     <ClCompile Include="GOAPWorldState.cpp" />
+    <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="HeuristicCalculator.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ManhattanDistance.cpp" />
+    <ClCompile Include="OctileDistance.cpp" />
     <ClCompile Include="PathFollowing.cpp" />
     <ClCompile Include="PriorityBlendingBehavior.cpp" />
     <ClCompile Include="SceneFSM.cpp" />
@@ -165,11 +174,17 @@
   <ItemGroup>
     <ClInclude Include="Agent.h" />
     <ClInclude Include="AllignmentBehavior.h" />
+    <ClInclude Include="AStarAlgorithm.h" />
+    <ClInclude Include="ChebyshevDistance.h" />
     <ClInclude Include="CohesionBehavior.h" />
     <ClInclude Include="CollisionAvoidanceBehavior.h" />
+    <ClInclude Include="Connection.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="DiagonalDistance.h" />
+    <ClInclude Include="EuclideanDistance.h" />
     <ClInclude Include="FleeBehavior.h" />
     <ClInclude Include="FlockingBehavior.h" />
+    <ClInclude Include="FrontierElement.h" />
     <ClInclude Include="FSM.h" />
     <ClInclude Include="GOAP.h" />
     <ClInclude Include="GOAPAction.h" />
@@ -177,8 +192,15 @@
     <ClInclude Include="GOAPAction_Patrol.h" />
     <ClInclude Include="GOAPAction_Shoot.h" />
     <ClInclude Include="GOAPWorldState.h" />
+    <ClInclude Include="Graph.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="HeuristicCalculator.h" />
+    <ClInclude Include="HeuristicFunction.h" />
+    <ClInclude Include="ManhattanDistance.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="OctileDistance.h" />
     <ClInclude Include="Path.h" />
+    <ClInclude Include="PathfindingAlgorithm.h" />
     <ClInclude Include="PathFollowing.h" />
     <ClInclude Include="FSMState.h" />
     <ClInclude Include="PriorityBlendingBehavior.h" />
