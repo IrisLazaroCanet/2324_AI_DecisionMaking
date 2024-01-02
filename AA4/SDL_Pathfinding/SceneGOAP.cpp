@@ -9,6 +9,7 @@ SceneGOAP::SceneGOAP()
 {
 	draw_grid = false;
 	maze = new Grid("../res/maze_rooms.csv");
+	graph = new Graph(maze);
 
 	loadTextures("../res/maze.png", "../res/coin.png", "../res/keys.png");
 

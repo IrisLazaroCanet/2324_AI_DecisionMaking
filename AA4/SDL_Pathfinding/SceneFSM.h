@@ -9,6 +9,7 @@
 #include "Seek.h"
 #include "PathFollowing.h"
 #include "Grid.h"
+#include "Graph.h"
 #include "FSM.h"
 #include "FSMState_Patrol.h"
 
@@ -25,6 +26,7 @@ private:
 	std::vector<Agent*> agents;
 	Vector2D coinPosition;
 
+	Graph* graph;
 	Grid* maze;
 	bool draw_grid;
 
@@ -35,3 +37,8 @@ private:
 	bool loadTextures(char* filename_bg, char* filename_coin);
 
 };
+
+//Exemples ús A* (cal fer include de "PathCalculator.h"
+//PathCalculator té posat A* com algorisme de resolució
+//A* té posat Manhattan distance (es pot canviar a la línia 6 de AStarAlgorithm.cpp)
+//path = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);

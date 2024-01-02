@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="AllignmentBehavior.cpp" />
+    <ClCompile Include="AStarAlgorithm.cpp" />
     <ClCompile Include="ChebyshevDistance.cpp" />
     <ClCompile Include="CohesionBehavior.cpp" />
     <ClCompile Include="CollisionAvoidanceBehavior.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ManhattanDistance.cpp" />
     <ClCompile Include="OctileDistance.cpp" />
+    <ClCompile Include="PathCalculator.cpp" />
     <ClCompile Include="PathFollowing.cpp" />
     <ClCompile Include="PriorityBlendingBehavior.cpp" />
     <ClCompile Include="SceneFSM.cpp" />
@@ -200,6 +202,7 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="OctileDistance.h" />
     <ClInclude Include="Path.h" />
+    <ClInclude Include="PathCalculator.h" />
     <ClInclude Include="PathfindingAlgorithm.h" />
     <ClInclude Include="PathFollowing.h" />
     <ClInclude Include="FSMState.h" />

@@ -9,6 +9,7 @@
 #include "Seek.h"
 #include "PathFollowing.h"
 #include "Grid.h"
+#include "Graph.h"
 #include "GOAP.h"
 
 class SceneGOAP :
@@ -25,6 +26,7 @@ private:
 	Vector2D coinPosition;
 	Vector2D keyPositions[8];
 
+	Graph* graph;
 	Grid *maze;
 	bool draw_grid;
 		

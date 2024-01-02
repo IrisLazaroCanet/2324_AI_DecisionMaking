@@ -180,6 +180,12 @@
     <ClCompile Include="utils.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="AStarAlgorithm.cpp">
+      <Filter>Source Files\Pathfinding\Search algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="PathCalculator.cpp">
+      <Filter>Source Files\Pathfinding\Search algorithms</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -322,6 +328,9 @@
     </ClInclude>
     <ClInclude Include="Vector2D.h">
       <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="PathCalculator.h">
+      <Filter>Header Files\Pathfinding\Search algorithms</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
