@@ -7,7 +7,7 @@ void FSMState_Patrol::Enter(Agent* agent, float dtime)
 FSMState* FSMState_Patrol::Update(Agent* agent, float dtime)
 {
 	//Agent deploy state actions / movement
-	//...
+	std::cout << "A";
 
 	//Transitions between states are checked here!
 	//..
