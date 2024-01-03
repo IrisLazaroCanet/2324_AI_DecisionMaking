@@ -1,6 +1,6 @@
 #include "FSMState_Chase.h"
 
-void FSMState_Chase::Enter(Agent* agent, float dtime)
+void FSMState_Chase::Enter(Agent* agent)
 {
 }
 
@@ -20,6 +20,6 @@ StateType FSMState_Chase::Update(Agent* agent, float dtime)
 	return StateType::NONE;
 }
 
-void FSMState_Chase::Exit(Agent* agent, float dtime)
+void FSMState_Chase::Exit(Agent* agent)
 {
 }

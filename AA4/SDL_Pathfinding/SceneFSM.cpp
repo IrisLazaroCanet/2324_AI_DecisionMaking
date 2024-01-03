@@ -15,7 +15,7 @@ SceneFSM::SceneFSM()
 	Agent* agent = new Agent;
 	agent->loadSpriteTexture("../res/soldier.png", 4);
 	agent->setBehavior(new PathFollowing);
-	agent->setBrain(new FSM(new FSMState_Patrol));
+	agent->setBrain(new FSM(new FSMState_Patrol, agent));
 	agent->setTarget(Vector2D(-20, -20));
 	agents.push_back(agent);
 
@@ -34,7 +34,7 @@ SceneFSM::SceneFSM()
 	Agent* otherAgent1 = new Agent;
 	otherAgent1->loadSpriteTexture("../res/zombie1.png", 8);
 	otherAgent1->setBehavior(new PathFollowing);
-	otherAgent1->setBrain(new FSM(new FSMState_Patrol));
+	otherAgent1->setBrain(new FSM(new FSMState_Patrol, agent));
 	otherAgent1->setTarget(Vector2D(0, 0));
 	agents.push_back(otherAgent1);
 
@@ -42,7 +42,7 @@ SceneFSM::SceneFSM()
 	Agent* otherAgent2 = new Agent;
 	otherAgent2->loadSpriteTexture("../res/zombie1.png", 8);
 	otherAgent2->setBehavior(new PathFollowing);
-	otherAgent2->setBrain(new FSM(new FSMState_Patrol));
+	otherAgent2->setBrain(new FSM(new FSMState_Patrol, agent));
 	otherAgent2->setTarget(Vector2D(0, 0));
 	agents.push_back(otherAgent2);
 

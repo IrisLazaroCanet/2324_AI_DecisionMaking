@@ -17,7 +17,7 @@ private:
 
 public:
 
-	FSM(FSMState* _currentState);
+	FSM(FSMState* _currentState, Agent* agent);
 	~FSM();
 	void Update(Agent* agent, float dtime) override;
 };

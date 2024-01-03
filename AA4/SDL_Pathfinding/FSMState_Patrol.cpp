@@ -1,6 +1,6 @@
 #include "FSMState_Patrol.h"
 
-void FSMState_Patrol::Enter(Agent* agent, float dtime)
+void FSMState_Patrol::Enter(Agent* agent)
 {
 	timeSinceEnter = 0;
 }
@@ -9,14 +9,14 @@ StateType FSMState_Patrol::Update(Agent* agent, float dtime)
 {
 	timeSinceEnter += dtime;
 	//Agent deploy state actions / movement
-	std::cout << timeSinceEnter << std::endl;
+	std::cout << "Patrol";
 
 	//Transitions between states are checked here!
 	//..
 
 	//TEST
 	//Change to chase
-	if (timeSinceEnter >= 3.f)
+	if (timeSinceEnter >= 0.5f)
 		return StateType::CHASE;
 	else
 		return StateType::NONE;
@@ -28,6 +28,6 @@ StateType FSMState_Patrol::Update(Agent* agent, float dtime)
 	*/
 }
 
-void FSMState_Patrol::Exit(Agent* agent, float dtime)
+void FSMState_Patrol::Exit(Agent* agent)
 {
 }
