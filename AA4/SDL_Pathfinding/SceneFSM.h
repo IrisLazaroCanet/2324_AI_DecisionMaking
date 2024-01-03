@@ -38,20 +38,6 @@ private:
 	// Decision Making
 	std::vector<FSM*> finiteStateMachines;
 
-
-	//New
-	void SceneFSM::AgentPatrol();
-
-	// set agent position coords to the center of a random cell
-
-	//int cellX
-
-	int min;
-	int max;
-	bool canGenerateNextPatrolPosition = true;
-	int patrolPosX;
-	int patrolPosY;
-
 };
 
 //Exemples ús A* (cal fer include de "PathCalculator.h"

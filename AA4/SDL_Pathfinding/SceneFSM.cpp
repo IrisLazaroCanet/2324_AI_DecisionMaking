@@ -95,8 +95,6 @@ void SceneFSM::update(float dtime, SDL_Event* event)
 			coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
 	}
 
-	AgentPatrol();
-
 	agents[1]->update(dtime, event);
 	agents[2]->update(dtime, event);
 
@@ -189,32 +187,4 @@ bool SceneFSM::loadTextures(char* filename_bg, char* filename_coin)
 		SDL_FreeSurface(image);
 
 	return true;
-}
-
-void SceneFSM::AgentPatrol()
-{
-	if (canGenerateNextPatrolPosition)
-	{
-		canGenerateNextPatrolPosition = false;
-
-		min = 0;
-	    max = 39;
-		patrolPosX = min + std::rand() % (max - min + 1);
-
-		min = 0;
-		max = 23;
-		patrolPosY = min + std::rand() % (max - min + 1);
-
-		agents[1]->addPathPoint(graph->CellToPix(Vector2D(patrolPosX, patrolPosY)));
-	}
-	
-	//std::cout << "x: " << agents[1]->getVelocity().x << "\n";
-	//std::cout << "y: " << agents[1]->getVelocity().y << "\n";
-
-	//std::cout << "Path : " << agents[1]->getPathPoint(agents[1]->getCurrentTargetIndex()).x << "\n";
-
-	if (agents[1]->getVelocity() == (0,0) && canGenerateNextPatrolPosition == false)
-	{
-		canGenerateNextPatrolPosition = true;
-	}
 }
