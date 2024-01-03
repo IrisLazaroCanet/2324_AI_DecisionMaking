@@ -35,6 +35,8 @@ private:
 	SDL_Texture* background_texture;
 	SDL_Texture* coin_texture;
 	bool loadTextures(char* filename_bg, char* filename_coin);
+	// Decision Making
+	std::vector<FSM*> finiteStateMachines;
 
 };
 

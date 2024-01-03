@@ -93,4 +93,15 @@ public:
 	
 	bool loadSpriteTexture(char* filename, int num_frames=1);
 	
+	//Agent Decision Making
+	//Agent has a Gun Equipped logic
+	bool agentHasGunEquipped;
+	bool getGun()
+	{
+		return agentHasGunEquipped; 
+	}
+	void setGun(const bool& gunIsEquipped) 
+	{
+		agentHasGunEquipped = gunIsEquipped;
+	}
 };

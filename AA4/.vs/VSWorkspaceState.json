@@ -3,6 +3,6 @@
     "",
     "\\SDL_Pathfinding"
   ],
-  "SelectedNode": "\\SDL_Pathfinding\\SceneFSM.h",
+  "SelectedNode": "\\SDL_Pathfinding\\FSM.cpp",
   "PreviewInSolutionExplorer": false
 }

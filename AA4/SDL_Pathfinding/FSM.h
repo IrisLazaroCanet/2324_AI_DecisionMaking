@@ -16,20 +16,7 @@ private:
 
 public:
 
-    FSM(FSMState* _currentState)
-        : currentState(_currentState),
-        currentStateEnter(nullptr),
-        currentStateUpdate(nullptr),
-        currentStateExit(nullptr)
-    {
-        // Initialize function pointers for the initial state
-        if (currentState)
-        {
-            currentStateEnter = currentState->enter;
-            currentStateUpdate = currentState->update;
-            currentStateExit = currentState->exit;
-        }
-    }
+	FSM(FSMState* _currentState);
 
 	~FSM();
 
