@@ -211,7 +211,7 @@ void SceneFSM::AgentPatrol()
 	//std::cout << "x: " << agents[1]->getVelocity().x << "\n";
 	//std::cout << "y: " << agents[1]->getVelocity().y << "\n";
 
-	std::cout << "Path : " << agents[1]->getPathPoint(agents[1]->getCurrentTargetIndex()).x << "\n";
+	//std::cout << "Path : " << agents[1]->getPathPoint(agents[1]->getCurrentTargetIndex()).x << "\n";
 
 	if (agents[1]->getVelocity() == (0,0) && canGenerateNextPatrolPosition == false)
 	{

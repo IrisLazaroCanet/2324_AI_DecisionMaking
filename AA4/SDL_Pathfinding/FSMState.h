@@ -1,21 +1,14 @@
 #pragma once
 #include "Agent.h"
 
+enum class StateType { CHASE, EVADE, PATROL, NONE };
+
 class FSMState
 {
 public:
-	//FSM Pointer
-    typedef void (*EnterFunction)(Agent* agent);
-    typedef FSMState* (*UpdateFunction)(Agent* agent, float dtime);
-    typedef void (*ExitFunction)(Agent* agent);
-
-    EnterFunction enter;
-    UpdateFunction update;
-    ExitFunction exit;
-
-    virtual ~FSMState() {}
-
-    virtual void Enter(Agent* agent, float dtime) = 0;
-	virtual FSMState* Update(Agent* agent, float dtime) = 0;
+	FSMState() { }
+	~FSMState() { }
+	virtual void Enter(Agent* agent, float dtime) = 0;
+	virtual StateType Update(Agent* agent, float dtime) = 0;
 	virtual void Exit(Agent* agent, float dtime) = 0;
 };

@@ -4,7 +4,7 @@ void FSMState_Chase::Enter(Agent* agent, float dtime)
 {
 }
 
-FSMState* FSMState_Chase::Update(Agent* agent, float dtime)
+StateType FSMState_Chase::Update(Agent* agent, float dtime)
 {
 	//Agent deploy state actions / movement
 	//...
@@ -12,11 +12,12 @@ FSMState* FSMState_Chase::Update(Agent* agent, float dtime)
 	//Transitions between states are checked here!
 	//..
 
+	std::cout << "Chase";
 	/*
-	* if(should_change_state) return new_state;
+	* if(should_change_state) return new_state (StateType enum);
 	* else
-	*/
-	return nullptr;
+	* */
+	return StateType::NONE;
 }
 
 void FSMState_Chase::Exit(Agent* agent, float dtime)

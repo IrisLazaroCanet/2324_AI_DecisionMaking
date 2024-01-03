@@ -1,5 +1,2 @@
-﻿  SceneFSM.cpp
-C:\Users\Arnau\Desktop\DECISION_MAKING\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SceneFSM.cpp(208,65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Arnau\Desktop\DECISION_MAKING\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SceneFSM.cpp(208,53): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Arnau\Desktop\DECISION_MAKING\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SceneFSM.cpp(220,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  SDL_Pathfinding.vcxproj -> C:\Users\Arnau\Desktop\DECISION_MAKING\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe
+﻿  FSMState_Patrol.cpp
+  SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe

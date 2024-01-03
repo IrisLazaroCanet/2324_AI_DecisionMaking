@@ -5,7 +5,7 @@ void FSMState_Evade::Enter(Agent* agent, float dtime)
 	
 }
 
-FSMState* FSMState_Evade::Update(Agent* agent, float dtime)
+StateType FSMState_Evade::Update(Agent* agent, float dtime)
 {
 	//Agent deploy state actions / movement
 	//...
@@ -14,10 +14,10 @@ FSMState* FSMState_Evade::Update(Agent* agent, float dtime)
 	//..
 
 	/*
-	* if(should_change_state) return new_state;
+	* if(should_change_state) return new_state (StateType enum);
 	* else
 	*/
-	return nullptr;
+	return StateType::NONE;
 }
 
 void FSMState_Evade::Exit(Agent* agent, float dtime)

@@ -1,43 +1,25 @@
 #include "FSM.h"
 
 FSM::FSM(FSMState* _currentState)
-    : currentState(_currentState),
-    currentStateEnter(nullptr),
-    currentStateUpdate(nullptr),
-    currentStateExit(nullptr)
+    : currentState(_currentState)
 {
-    // Initialize function pointers for the initial state
-    if (currentState)
-    {
-        currentStateEnter = currentState->enter;
-        currentStateUpdate = currentState->update;
-        currentStateExit = currentState->exit;
-    }
+    availableStates[StateType::PATROL] = new FSMState_Patrol();
+    availableStates[StateType::CHASE] = new FSMState_Chase();
+    availableStates[StateType::EVADE] = new FSMState_Evade();
+
+    //currentState = availableStates[StateType::PATROL];
+    //currentState->Enter();
 }
 
 
-void FSM::ChangeState(FSMState* newState, Agent* agent)
+void FSM::ChangeState(StateType newStateType, Agent* agent, float dtime)
 {
-    // Exit the current state
-    if (currentStateExit)
-        currentStateExit(agent);
+    currentState->Exit(agent, dtime);
+    //currentState = newState;
+    currentState = availableStates[newStateType];
+    currentState->Enter(agent, dtime);
 
-    // Change to the new state
-    currentState = newState;
-
-    // Update function pointers for the new state
-    if (currentState)
-    {
-        currentStateEnter = currentState->enter;
-        currentStateUpdate = currentState->update;
-        currentStateExit = currentState->exit;
-    }
-
-    // Enter the new state
-    if (currentStateEnter)
-        currentStateEnter(agent);
 }
-
 
 FSM::~FSM()
 {
@@ -46,13 +28,7 @@ FSM::~FSM()
 
 void FSM::Update(Agent* agent, float dtime)
 {
-    if (currentStateUpdate)
-    {
-        FSMState* newState = currentStateUpdate(agent, dtime);
-
-        if (newState != nullptr)
-        {
-            ChangeState(newState, agent);
-        }
-    }
+    StateType newStateType = currentState->Update(agent, dtime);
+    if (newStateType != StateType::NONE)
+        ChangeState(newStateType, agent, dtime);
 }
