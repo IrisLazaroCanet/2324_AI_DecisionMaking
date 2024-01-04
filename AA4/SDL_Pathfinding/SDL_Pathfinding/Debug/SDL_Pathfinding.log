@@ -1,5 +1,2 @@
-﻿  FSMState_Patrol.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(29,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(29,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(39,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe
+﻿  SceneFSM.cpp
+  SDL_Pathfinding.vcxproj -> C:\Users\Arnau\Desktop\DECISION_MAKING\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe

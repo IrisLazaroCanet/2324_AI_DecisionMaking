@@ -53,11 +53,11 @@ StateType FSMState_Patrol::Update(Agent* agent, float dtime)
 
 	//TEST
 	//Change to chase
-	/*
+	
 	if (timeSinceEnter >= 0.5f)
 		return StateType::CHASE;
 	else
-		*/
+		
 		return StateType::NONE;
 
 	/*

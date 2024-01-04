@@ -2,6 +2,7 @@
 
 void FSMState_Chase::Enter(Agent* agent)
 {
+	agent->setBehavior(&seekBehaviour);
 }
 
 StateType FSMState_Chase::Update(Agent* agent, float dtime)
@@ -11,7 +12,7 @@ StateType FSMState_Chase::Update(Agent* agent, float dtime)
 
 	//Transitions between states are checked here!
 	//..
-
+	agent->setTarget(agent->getTarget());
 	std::cout << "Chase";
 	/*
 	* if(should_change_state) return new_state (StateType enum);
