@@ -1,19 +1,33 @@
 #include "FSMState_Chase.h"
 
-void FSMState_Chase::Enter(Agent* agent)
+void FSMState_Chase::Enter(Agent* agent, Agent* target)
 {
-	agent->setBehavior(&seekBehaviour);
+	agent->setBehavior(new SeekBehavior());
 }
 
-StateType FSMState_Chase::Update(Agent* agent, float dtime)
+StateType FSMState_Chase::Update(Agent* agent, Agent* target, float dtime)
 {
 	//Agent deploy state actions / movement
-	//...
+	//agent->setTarget(target->getPosition());
+	std::cout << "Chase";
+	Vector2D sterring_force = agent->getBehavior()->CalculateForces(agent, target, dtime);
+	
+	agent->setVelocity(
+		agent->getVelocity() + sterring_force * dtime
+	);
+	agent->setVelocity(
+		agent->getVelocity().Truncate(agent->getMaxVelocity())
+	);
+
+	agent->setPosition(
+		agent->getPosition() + agent->getVelocity() * dtime
+	);
+
+	agent->updateOrientation();
 
 	//Transitions between states are checked here!
 	//..
-	agent->setTarget(agent->getTarget());
-	std::cout << "Chase";
+
 	/*
 	* if(should_change_state) return new_state (StateType enum);
 	* else
@@ -21,6 +35,6 @@ StateType FSMState_Chase::Update(Agent* agent, float dtime)
 	return StateType::NONE;
 }
 
-void FSMState_Chase::Exit(Agent* agent)
+void FSMState_Chase::Exit(Agent* agent, Agent* target)
 {
 }

@@ -12,12 +12,12 @@ SceneFSM::SceneFSM()
 
 	srand((unsigned int)time(NULL));
 
-	Agent* agent = new Agent;
-	agent->loadSpriteTexture("../res/soldier.png", 4);
-	agent->setBehavior(new PathFollowing);
-	agent->setBrain(new FSM(new FSMState_Patrol, agent));
-	agent->setTarget(Vector2D(-20, -20));
-	agents.push_back(agent);
+	Agent* player = new Agent;
+	player->loadSpriteTexture("../res/soldier.png", 4);
+	//player->setBehavior(new PathFollowing);
+	player->setIsPlayer(true);
+	//player->setTarget(Vector2D(-20, -20));
+	agents.push_back(player);
 
 	// set agent position coords to the center of a random cell
 	Vector2D rand_cell(-1, -1);
@@ -31,20 +31,24 @@ SceneFSM::SceneFSM()
 		coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
 
 	//Agente 1
-	Agent* otherAgent1 = new Agent;
-	otherAgent1->loadSpriteTexture("../res/zombie1.png", 8);
-	otherAgent1->setBehavior(new PathFollowing);
-	otherAgent1->setBrain(new FSM(new FSMState_Patrol, agent));
-	otherAgent1->setTarget(Vector2D(0, 0));
-	agents.push_back(otherAgent1);
+	Agent* npc1 = new Agent;
+	npc1->loadSpriteTexture("../res/zombie1.png", 8);
+	//npc1->setBehavior(new PathFollowing);
+	npc1->setIsPlayer(false);
+	npc1->setTargetAgent(player);
+	npc1->setBrain(new FSM(new FSMState_Patrol, npc1, npc1->getTargetAgent()));
+	//npc1->setTarget(Vector2D(0, 0));
+	agents.push_back(npc1);
 
 	//Agente 2
-	Agent* otherAgent2 = new Agent;
-	otherAgent2->loadSpriteTexture("../res/zombie1.png", 8);
-	otherAgent2->setBehavior(new PathFollowing);
-	otherAgent2->setBrain(new FSM(new FSMState_Patrol, agent));
-	otherAgent2->setTarget(Vector2D(0, 0));
-	agents.push_back(otherAgent2);
+	Agent* npc2 = new Agent;
+	npc2->loadSpriteTexture("../res/zombie1.png", 8);
+	//npc2->setBehavior(new PathFollowing);
+	npc2->setIsPlayer(false);
+	npc2->setTargetAgent(player);
+	npc2->setBrain(new FSM(new FSMState_Patrol, npc2, npc2->getTargetAgent()));
+	//npc2->setTarget(Vector2D(0, 0));
+	agents.push_back(npc2);
 
 	agents[1]->setPosition(graph->CellToPix(Vector2D(38, 22)));
 	agents[2]->setPosition(graph->CellToPix(Vector2D(20, 12)));
@@ -98,7 +102,7 @@ void SceneFSM::update(float dtime, SDL_Event* event)
 	agents[1]->update(dtime, event);
 	agents[2]->update(dtime, event);
 
-	agents[1]->setTarget(agents[0]->getPosition());
+	//agents[1]->setTarget(agents[0]->getPosition());
 
 }
 

@@ -8,7 +8,7 @@ class FSMState
 public:
 	FSMState() { }
 	~FSMState() { }
-	virtual void Enter(Agent* agent) = 0;
-	virtual StateType Update(Agent* agent, float dtime) = 0;
-	virtual void Exit(Agent* agent) = 0;
+	virtual void Enter(Agent* agent, Agent* target) = 0;
+	virtual StateType Update(Agent* agent, Agent* target, float dtime) = 0;
+	virtual void Exit(Agent* agent, Agent* target) = 0;
 };

@@ -1,16 +1,19 @@
 #include "FSMState_Patrol.h"
 
-void FSMState_Patrol::Enter(Agent* agent)
+void FSMState_Patrol::Enter(Agent* agent, Agent* target)
 {
 	timeSinceEnter = 0;
+	//agent->setBehavior(new WanderBehavior());
 }
 
-StateType FSMState_Patrol::Update(Agent* agent, float dtime)
+StateType FSMState_Patrol::Update(Agent* agent, Agent* target, float dtime)
 {
 	//Agent deploy state actions / movement
 
 	// set agent position coords to the center of a random cell
 	
+	//agent->getBehavior()->CalculateForces(agent, target, dtime);
+
 	if (canGenerateNextPatrolPosition)
 	{
 		canGenerateNextPatrolPosition = false;
@@ -67,6 +70,6 @@ StateType FSMState_Patrol::Update(Agent* agent, float dtime)
 	*/
 }
 
-void FSMState_Patrol::Exit(Agent* agent)
+void FSMState_Patrol::Exit(Agent* agent, Agent* target)
 {
 }

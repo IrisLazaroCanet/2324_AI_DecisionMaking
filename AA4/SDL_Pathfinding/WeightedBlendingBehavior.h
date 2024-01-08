@@ -1,12 +1,12 @@
 #pragma once
-#include "SteeringBehavior.h"
+#include "Agent.h"
 #include <map>
 
 using namespace std;
 
-class Agent;
+//class Agent;
 
-class WeightedBlendingBehavior : public SteeringBehavior
+class WeightedBlendingBehavior : public Agent::SteeringBehavior
 {
 public:
 	WeightedBlendingBehavior(map<SteeringBehavior*, float> _behaviors);

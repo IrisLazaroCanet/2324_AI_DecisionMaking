@@ -1,14 +1,14 @@
 #include "FSMState_Evade.h"
 
-void FSMState_Evade::Enter(Agent* agent)
+void FSMState_Evade::Enter(Agent* agent, Agent* target)
 {
-	
+	agent->setBehavior(new FleeBehavior());
 }
 
-StateType FSMState_Evade::Update(Agent* agent, float dtime)
+StateType FSMState_Evade::Update(Agent* agent, Agent* target, float dtime)
 {
 	//Agent deploy state actions / movement
-	//...
+	agent->getBehavior()->CalculateForces(agent, target, dtime);
 
 	//Transitions between states are checked here!
 	//..
@@ -20,6 +20,6 @@ StateType FSMState_Evade::Update(Agent* agent, float dtime)
 	return StateType::NONE;
 }
 
-void FSMState_Evade::Exit(Agent* agent)
+void FSMState_Evade::Exit(Agent* agent, Agent* target)
 {
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include "FSMState.h"
 #include <iostream>
+//#include <WanderBehavior.h>
 
 class FSMState_Patrol : public FSMState
 {
@@ -17,7 +18,7 @@ private:
 	//
 
 public:
-	void Enter(Agent* agent) override;
-	StateType Update(Agent* agent, float dtime) override;
-	void Exit(Agent* agent) override;
+	void Enter(Agent* agent, Agent* target) override;
+	StateType Update(Agent* agent, Agent* target, float dtime) override;
+	void Exit(Agent* agent, Agent* target) override;
 };

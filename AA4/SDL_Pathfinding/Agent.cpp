@@ -92,10 +92,11 @@ void Agent::update(float dtime, SDL_Event *event)
 	}
 
 	// Update decisions
-	brain->Update(this, dtime);
+	if(!isPlayer)
+		brain->Update(this, targetAgent, dtime);
 
 	// Apply the steering behavior
-	steering_behaviour->applySteeringForce(this, dtime);
+	//steering_behaviour->applySteeringForce(this, dtime);
 	
 	// Update orientation
 	if (velocity.Length())

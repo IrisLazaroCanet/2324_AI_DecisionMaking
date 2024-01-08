@@ -13,8 +13,8 @@ ScenePathFindingMouse::ScenePathFindingMouse()
 
 	Agent *agent = new Agent;
 	agent->loadSpriteTexture("../res/soldier.png", 4);
-	agent->setBehavior(new PathFollowing);
-	agent->setTarget(Vector2D(-20,-20));
+	//agent->setBehavior(new PathFollowing);
+	//agent->setTarget(Vector2D(-20,-20));
 	agents.push_back(agent);
 
 	// set agent position coords to the center of a random cell

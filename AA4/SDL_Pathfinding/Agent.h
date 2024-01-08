@@ -6,24 +6,29 @@
 #include "Path.h"
 #include "Vector2D.h"
 #include "utils.h"
+#include "SteeringBehavior.h"
 
 class Agent
 {
 public:
+	
 	class SteeringBehavior
 	{
 	public:
-		SteeringBehavior() {};
-		virtual ~SteeringBehavior() {};
-		virtual void applySteeringForce(Agent *agent, float dtime) {};
+		SteeringBehavior() { }
+		~SteeringBehavior() { }
+
+		virtual Vector2D CalculateForces(Agent* agent, Vector2D target, float dtime) = 0;
+		virtual Vector2D CalculateForces(Agent* agent, Agent* target, float dtime) = 0;
 	};
+	
 
 	class DecisionMakingAlgorithm
 	{
 	public:
 		DecisionMakingAlgorithm() {};
 		~DecisionMakingAlgorithm() {};
-		virtual void Update(Agent* agent, float dtime) {};
+		virtual void Update(Agent* agent, Agent* target, float dtime) {};
 
 	};
 
@@ -44,6 +49,8 @@ private:
 
 	// Decision making
 	DecisionMakingAlgorithm* brain;
+	bool isPlayer;
+	Agent* targetAgent;
 	
 	float mass;
 	float orientation;
@@ -71,6 +78,8 @@ public:
 	void setPosition(Vector2D position);
 	void setTarget(Vector2D target);
 	void setVelocity(Vector2D velocity);
+	void updateOrientation() { orientation = (float)(atan2(velocity.y, velocity.x) * RAD2DEG); }
+
 	SteeringBehavior* getBehavior() const { return steering_behaviour; }
 	const std::vector<Agent*>& getNeighbors() const { return neighbors; }
 	float getSeparationRadius() const { return separationRadius; }
@@ -94,6 +103,10 @@ public:
 	bool loadSpriteTexture(char* filename, int num_frames=1);
 	
 	//Agent Decision Making
+	void setIsPlayer(bool _isPlayer) { isPlayer = _isPlayer; }
+	void setTargetAgent(Agent* _targetAgent) { targetAgent = _targetAgent; }
+	Agent* getTargetAgent() { return targetAgent; }
+
 	//Agent has a Gun Equipped logic
 	bool agentHasGunEquipped;
 	bool getGun()

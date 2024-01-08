@@ -1,10 +1,10 @@
 #pragma once
-#include "SteeringBehavior.h"
+#include "Agent.h"
 #include <vector>
 
 class Agent;
 
-class CohesionBehavior : public SteeringBehavior
+class CohesionBehavior : public Agent::SteeringBehavior
 {
 public:
     CohesionBehavior();

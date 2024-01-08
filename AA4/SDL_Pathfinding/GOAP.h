@@ -22,6 +22,6 @@ private:
 public:
 	GOAP();
 	~GOAP();
-	void Update(Agent* agent, float dtime) override;
+	void Update(Agent* agent, Agent* target, float dtime) override;
 
 };

@@ -1,9 +1,9 @@
 #pragma once
-#include "SteeringBehavior.h"
+#include "Agent.h"
 
-class Agent;
+//class Agent;
 
-class CollisionAvoidanceBehavior : public SteeringBehavior
+class CollisionAvoidanceBehavior : public Agent::SteeringBehavior
 {
 public:
 

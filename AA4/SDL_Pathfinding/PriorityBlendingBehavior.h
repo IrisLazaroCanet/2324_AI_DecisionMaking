@@ -1,8 +1,8 @@
 #pragma once
-#include "SteeringBehavior.h"
+#include "Agent.h"
 #include <vector>
 
-class PriorityBlendingBehavior : public SteeringBehavior
+class PriorityBlendingBehavior : public Agent::SteeringBehavior
 {
 public:
     PriorityBlendingBehavior(std::initializer_list<SteeringBehavior*> behaviors);

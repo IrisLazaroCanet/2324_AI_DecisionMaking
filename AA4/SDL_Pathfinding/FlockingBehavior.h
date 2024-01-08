@@ -1,5 +1,5 @@
 #pragma once
-#include "SteeringBehavior.h"
+#include "Agent.h"
 
 #include "PriorityBlendingBehavior.h"
 #include "WeightedBlendingBehavior.h"
@@ -7,9 +7,9 @@
 #include "SeparationBehavior.h"
 #include "AllignmentBehavior.h"
 
-class Agent;
+//class Agent;
 
-class FlockingBehavior : public SteeringBehavior
+class FlockingBehavior : public Agent::SteeringBehavior
 {
 private:
 	WeightedBlendingBehavior* weightedBlending;

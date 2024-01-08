@@ -13,7 +13,7 @@ GOAP::~GOAP()
 {
 }
 
-void GOAP::Update(Agent* agent, float dtime)
+void GOAP::Update(Agent* agent, Agent* target, float dtime)
 {
 	//...
 	if (plan.empty())

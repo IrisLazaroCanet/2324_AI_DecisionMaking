@@ -1,5 +1,5 @@
 #include "Seek.h"
-
+/*
 Seek::Seek()
 {
 }
@@ -24,3 +24,4 @@ void Seek::applySteeringForce(Agent *agent, float dtime)
 
 	agent->setPosition(agent->getPosition() + agent->getVelocity() * dtime);
 }
+*/
