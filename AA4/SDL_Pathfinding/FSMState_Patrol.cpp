@@ -14,6 +14,9 @@ StateType FSMState_Patrol::Update(Agent* agent, Agent* target, float dtime)
 	
 	//agent->getBehavior()->CalculateForces(agent, target, dtime);
 
+
+	//OLD
+	/*
 	if (canGenerateNextPatrolPosition)
 	{
 		canGenerateNextPatrolPosition = false;
@@ -43,6 +46,7 @@ StateType FSMState_Patrol::Update(Agent* agent, Agent* target, float dtime)
 	{
 		canGenerateNextPatrolPosition = true;
 	}
+	*/
 	
 	
 	

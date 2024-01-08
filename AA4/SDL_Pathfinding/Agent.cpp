@@ -61,6 +61,20 @@ float Agent::getMass()
 	return mass;
 }
 
+void Agent::ApplySteeringBehavior(Agent* target, float dtime)
+{
+	//Calculates force and acceleration
+	Vector2D steering_force = steering_behaviour->CalculateForces(this, target, dtime);
+
+	velocity = velocity + steering_force * dtime;
+	velocity = velocity.Truncate(max_velocity);
+
+	position = position + velocity * dtime;
+
+	// Update orientation
+	orientation = (float)(atan2(velocity.y, velocity.x) * RAD2DEG);
+}
+
 void Agent::setPosition(Vector2D _position)
 {
 	position = _position;

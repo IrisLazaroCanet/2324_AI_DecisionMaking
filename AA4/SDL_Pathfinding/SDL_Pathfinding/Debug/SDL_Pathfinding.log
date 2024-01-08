@@ -1,19 +1,16 @@
-﻿  AStarAlgorithm.cpp
-  Agent.cpp
+﻿  Agent.cpp
   AllignmentBehavior.cpp
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\AllignmentBehavior.cpp(37,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  AStarAlgorithm.cpp
   CohesionBehavior.cpp
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\CohesionBehavior.cpp(38,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   CollisionAvoidanceBehavior.cpp
+  FleeBehavior.cpp
+  FlockingBehavior.cpp
   FSM.cpp
   FSMState_Chase.cpp
   FSMState_Evade.cpp
   FSMState_Patrol.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(32,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(32,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(42,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  FleeBehavior.cpp
-  FlockingBehavior.cpp
   GOAP.cpp
   GOAPAction.cpp
   GOAPAction_Aim.cpp
@@ -43,11 +40,12 @@ C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Art
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(350,9): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(351,9): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
   Grid.cpp
+  main.cpp
   PathCalculator.cpp
-  PathFollowing.cpp
   Generating Code...
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(322): warning C4715: 'Graph::CalculateZoneFromPoint': not all control paths return a value
   Compiling...
+  PathFollowing.cpp
   PriorityBlendingBehavior.cpp
   SceneFSM.cpp
   SceneGOAP.cpp
@@ -57,6 +55,5 @@ C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Art
   SeparationBehavior.cpp
   SteeringBehavior.cpp
   WeightedBlendingBehavior.cpp
-  main.cpp
   Generating Code...
   SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe

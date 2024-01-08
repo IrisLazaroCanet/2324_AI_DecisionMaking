@@ -73,6 +73,8 @@ public:
 	float getMaxForce();
 	float getMass();
 
+	void ApplySteeringBehavior(Agent* target, float dtime);
+
 	void addNeighbor(Agent* neighbor) { neighbors.push_back(neighbor); }
 	void setBehavior(SteeringBehavior *behavior);
 	void setPosition(Vector2D position);
