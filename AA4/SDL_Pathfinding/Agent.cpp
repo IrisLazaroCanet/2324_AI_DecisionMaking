@@ -61,7 +61,7 @@ float Agent::getMass()
 	return mass;
 }
 
-void Agent::ApplySteeringBehavior(Agent* target, float dtime)
+void Agent::applySteeringBehavior(Agent* target, float dtime)
 {
 	//Calculates force and acceleration
 	Vector2D steering_force = steering_behaviour->CalculateForces(this, target, dtime);
@@ -73,6 +73,80 @@ void Agent::ApplySteeringBehavior(Agent* target, float dtime)
 
 	// Update orientation
 	orientation = (float)(atan2(velocity.y, velocity.x) * RAD2DEG);
+}
+
+void Agent::applyPathFollowing(float dtime)
+{
+	//There is a path and we have not started to follow it
+	if ((currentTargetIndex == -1) && (getPathSize() > 0))
+		currentTargetIndex = 0;
+
+	//We are in the middle of a path
+	if (currentTargetIndex >= 0)
+	{
+		float dist = Vector2D::Distance(position, getPathPoint(currentTargetIndex));
+		// We 've reached the current target
+		if (dist < Path::ARRIVAL_DISTANCE)
+		{
+			// Current target is path's last point?
+			if (currentTargetIndex == getPathSize() - 1)
+			{
+				if (dist < 3) // We've reached the end of the path
+				{
+					clearPath();
+					velocity = Vector2D(0, 0);
+					return;
+				}
+				else
+				{
+					// Arrive to current target
+					float slow_factor = (target - position).Length() / Path::ARRIVAL_DISTANCE;
+
+					Vector2D desired_velocity = target - position;
+					desired_velocity.Normalize();
+					if ((target - position).Length() > Path::ARRIVAL_DISTANCE)
+						desired_velocity *= max_velocity;
+					else
+						desired_velocity *= max_velocity * slow_factor;
+
+					Vector2D steering_force = desired_velocity - velocity;
+					steering_force /= max_velocity;
+					steering_force = steering_force * max_force;
+
+					Vector2D acceleration = steering_force / mass;
+					velocity = velocity + acceleration * dtime;
+					velocity = velocity.Truncate(max_velocity);
+
+					position = position + velocity * dtime;
+					return;
+
+				}
+			}
+			// Go to the next point in the path
+			currentTargetIndex = currentTargetIndex + 1;
+		}
+		// Seek to current target
+		target = getPathPoint(currentTargetIndex);
+
+		Vector2D desired_velocity = target - position;
+		desired_velocity.Normalize();
+		desired_velocity *= max_velocity;
+
+		Vector2D steering_force = desired_velocity - velocity;
+		steering_force /= max_velocity;
+		steering_force = steering_force * max_force;
+
+		Vector2D acceleration = steering_force / mass;
+		velocity = velocity + acceleration * dtime;
+		velocity = velocity.Truncate(max_velocity);
+
+		position = position + velocity * dtime;
+		
+		return;
+	}
+	// Do nothing if there is no path!
+	return;
+
 }
 
 void Agent::setPosition(Vector2D _position)
@@ -106,8 +180,10 @@ void Agent::update(float dtime, SDL_Event *event)
 	}
 
 	// Update decisions
-	if(!isPlayer)
+	if (!isPlayer)
 		brain->Update(this, targetAgent, dtime);
+	else
+		applyPathFollowing(dtime);
 
 	// Apply the steering behavior
 	//steering_behaviour->applySteeringForce(this, dtime);

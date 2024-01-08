@@ -1,5 +1,6 @@
 #include "PathFollowing.h"
 
+/*
 PathFollowing::PathFollowing()
 {
 }
@@ -80,3 +81,4 @@ void PathFollowing::applySteeringForce(Agent *agent, float dtime)
 	return;
 		
 }
+*/

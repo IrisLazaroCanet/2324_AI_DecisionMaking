@@ -10,7 +10,7 @@ StateType FSMState_Chase::Update(Agent* agent, Agent* target, float dtime)
 	//Agent deploy state actions / movement
 	//agent->setTarget(target->getPosition());
 	std::cout << "Chase";
-	agent->ApplySteeringBehavior(target, dtime);
+	agent->applySteeringBehavior(target, dtime);
 
 	/*
 	Vector2D sterring_force = agent->getBehavior()->CalculateForces(agent, target, dtime);

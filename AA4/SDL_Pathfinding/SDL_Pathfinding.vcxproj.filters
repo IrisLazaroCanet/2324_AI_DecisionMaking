@@ -105,9 +105,6 @@
     <ClCompile Include="GOAPWorldState.cpp">
       <Filter>Source Files\GOAP</Filter>
     </ClCompile>
-    <ClCompile Include="SceneGOAP.cpp">
-      <Filter>Source Files\GOAP</Filter>
-    </ClCompile>
     <ClCompile Include="SceneFSM.cpp">
       <Filter>Source Files\FMS</Filter>
     </ClCompile>
@@ -185,6 +182,9 @@
     </ClCompile>
     <ClCompile Include="PathCalculator.cpp">
       <Filter>Source Files\Pathfinding\Search algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGOAP.cpp">
+      <Filter>Source Files\GOAP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
