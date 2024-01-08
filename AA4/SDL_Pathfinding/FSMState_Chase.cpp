@@ -38,7 +38,12 @@ StateType FSMState_Chase::Update(Agent* agent, Agent* target, float dtime)
 	* else
 	* */
 
-	if (distanceToTarget > agent->distanceThreshold)
+	if (distanceToTarget < agent->distanceThreshold && target->agentHasGunEquipped)
+	{
+		return StateType::EVADE;
+	}
+
+	else if (distanceToTarget > agent->distanceThreshold)
 	{
 		return StateType::PATROL;
 	}

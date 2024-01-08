@@ -64,15 +64,15 @@ StateType FSMState_Patrol::Update(Agent* agent, Agent* target, float dtime)
 	//	return StateType::CHASE;
 	//else
 
-	if (distanceToTarget < agent->distanceThreshold && target->agentHasGunEquipped == false)
+	if (distanceToTarget < agent->distanceThreshold)
 	{
 		return StateType::CHASE;
 	}
 
-	else if (distanceToTarget < agent->distanceThreshold && target->agentHasGunEquipped )
+	/*else if (distanceToTarget < agent->distanceThreshold && target->agentHasGunEquipped)
 	{
 		return StateType::EVADE;
-	}
+	}*/
 		
     return StateType::NONE;
 
