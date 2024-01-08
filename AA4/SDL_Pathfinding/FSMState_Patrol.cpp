@@ -8,6 +8,7 @@ void FSMState_Patrol::Enter(Agent* agent, Agent* target)
 
 StateType FSMState_Patrol::Update(Agent* agent, Agent* target, float dtime)
 {
+	float distanceToTarget = Vector2D::Distance(agent->getPosition(), target->getPosition());
 	//Agent deploy state actions / movement
 
 	// set agent position coords to the center of a random cell
@@ -48,11 +49,9 @@ StateType FSMState_Patrol::Update(Agent* agent, Agent* target, float dtime)
 	}
 	*/
 	
-	
-	
 	//TODO: Remove this test
 	timeSinceEnter += dtime;
-	std::cout << "Patrol";
+	//std::cout << "Patrol";
 	//
 
 	//Transitions between states are checked here!
@@ -61,11 +60,21 @@ StateType FSMState_Patrol::Update(Agent* agent, Agent* target, float dtime)
 	//TEST
 	//Change to chase
 	
-	if (timeSinceEnter >= 0.5f)
+	//if (timeSinceEnter >= 1.f)
+	//	return StateType::CHASE;
+	//else
+
+	if (distanceToTarget < agent->distanceThreshold && target->agentHasGunEquipped == false)
+	{
 		return StateType::CHASE;
-	else
+	}
+
+	else if (distanceToTarget < agent->distanceThreshold && target->agentHasGunEquipped )
+	{
+		return StateType::EVADE;
+	}
 		
-		return StateType::NONE;
+    return StateType::NONE;
 
 	/*
 	* if(should_change_state) return new_state;

@@ -63,6 +63,8 @@ private:
 	int sprite_w;
 	int sprite_h;
 
+	bool canDefineMaxVelocity = true;
+
 public:
 	Agent();
 	~Agent();
@@ -112,6 +114,8 @@ public:
 
 	//Agent has a Gun Equipped logic
 	bool agentHasGunEquipped;
+	float distanceThreshold = 300.f;
+
 	bool getGun()
 	{
 		return agentHasGunEquipped; 

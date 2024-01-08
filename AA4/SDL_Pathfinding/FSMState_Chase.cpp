@@ -7,9 +7,10 @@ void FSMState_Chase::Enter(Agent* agent, Agent* target)
 
 StateType FSMState_Chase::Update(Agent* agent, Agent* target, float dtime)
 {
+	float distanceToTarget = Vector2D::Distance(agent->getPosition(), target->getPosition());
 	//Agent deploy state actions / movement
 	//agent->setTarget(target->getPosition());
-	std::cout << "Chase";
+	//std::cout << "Chase";
 	agent->applySteeringBehavior(target, dtime);
 
 	/*
@@ -36,6 +37,12 @@ StateType FSMState_Chase::Update(Agent* agent, Agent* target, float dtime)
 	* if(should_change_state) return new_state (StateType enum);
 	* else
 	* */
+
+	if (distanceToTarget > agent->distanceThreshold)
+	{
+		return StateType::PATROL;
+	}
+
 	return StateType::NONE;
 }
 

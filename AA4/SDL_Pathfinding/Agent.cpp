@@ -166,14 +166,35 @@ void Agent::setVelocity(Vector2D _velocity)
 
 void Agent::update(float dtime, SDL_Event *event)
 {
+	if (!isPlayer && canDefineMaxVelocity)
+	{
+		max_velocity = 100;
+		canDefineMaxVelocity = false;
+	}
 
-	//cout << "agent update:" << endl;
+	else if (isPlayer && canDefineMaxVelocity)
+	{	
+		max_velocity = 200;
+		canDefineMaxVelocity = false;
+	
+	}
 
 	switch (event->type) {
 		/* Keyboard & Mouse events */
 	case SDL_KEYDOWN:
 		if (event->key.keysym.scancode == SDL_SCANCODE_SPACE)
 			draw_sprite = !draw_sprite;
+		else if (event->key.keysym.scancode == SDL_SCANCODE_E && !agentHasGunEquipped && isPlayer)
+		{
+			agentHasGunEquipped = true;
+			std::cout << "ARMA EQUIPADA" << endl;
+		}
+
+		else if (event->key.keysym.scancode == SDL_SCANCODE_E && agentHasGunEquipped && isPlayer)
+		{
+			agentHasGunEquipped = false;
+			std::cout << "ARMA DESEQUIPADA" << endl;
+		}
 		break;
 	default:
 		break;
