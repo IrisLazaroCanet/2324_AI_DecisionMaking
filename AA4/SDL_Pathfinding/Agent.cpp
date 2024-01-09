@@ -61,12 +61,22 @@ float Agent::getMass()
 	return mass;
 }
 
-void Agent::applySteeringBehavior(Agent* target, float dtime)
+void Agent::applySteeringBehavior(Agent* target, float dtime, Vector2D randomPosition, bool moveRandom)
 {
 	//Calculates force and acceleration
-	Vector2D steering_force = steering_behaviour->CalculateForces(this, target, dtime);
 
-	velocity = velocity + steering_force * dtime;
+	if (moveRandom)
+	{
+		Vector2D steering_force = steering_behaviour->CalculateForces(this, randomPosition, dtime);
+		velocity = velocity + steering_force * dtime;
+	}
+
+	if (!moveRandom)
+	{
+		Vector2D steering_force = steering_behaviour->CalculateForces(this, target, dtime);
+		velocity = velocity + steering_force * dtime;
+	}
+
 	velocity = velocity.Truncate(max_velocity);
 
 	position = position + velocity * dtime;
