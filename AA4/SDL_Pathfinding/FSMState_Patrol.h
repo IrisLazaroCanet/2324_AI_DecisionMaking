@@ -1,6 +1,7 @@
 #pragma once
 #include "FSMState.h"
 #include <iostream>
+#include "SeekBehavior.h"
 //#include <WanderBehavior.h>
 
 class FSMState_Patrol : public FSMState
@@ -11,10 +12,15 @@ private:
 	bool canGenerateNextPatrolPosition = true;
 	int patrolPosX;
 	int patrolPosY;
+	float timer;
+
+	int randomX;
+	int randomY;
 
 	//TEST
 	//TODO: Remove this test
 	float timeSinceEnter;
+	Vector2D randomPos;
 	//
 
 public:

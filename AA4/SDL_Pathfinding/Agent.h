@@ -75,7 +75,7 @@ public:
 	float getMaxForce();
 	float getMass();
 
-	void applySteeringBehavior(Agent* target, float dtime);
+	void applySteeringBehavior(Agent* target, float dtime, Vector2D randomPosition, bool moveRandom);
 	void applyPathFollowing(float dtime);
 
 	void addNeighbor(Agent* neighbor) { neighbors.push_back(neighbor); }
