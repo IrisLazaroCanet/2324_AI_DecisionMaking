@@ -1,11 +1,76 @@
-﻿  FSM.cpp
+﻿  AStarAlgorithm.cpp
+  Agent.cpp
+  AllignmentBehavior.cpp
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\AllignmentBehavior.cpp(37,28): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  ChebyshevDistance.cpp
+  CohesionBehavior.cpp
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\CohesionBehavior.cpp(38,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  CollisionAvoidanceBehavior.cpp
+  Connection.cpp
+  DiagonalDistance.cpp
+  EuclideanDistance.cpp
+  FSM.cpp
   FSMState_Chase.cpp
   FSMState_Evade.cpp
   FSMState_Patrol.cpp
-C:\Users\ArnauPradas\Desktop\Decision Making\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(25,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\ArnauPradas\Desktop\Decision Making\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(25,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\ArnauPradas\Desktop\Decision Making\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(35,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(25,33): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(25,24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(35,84): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  FleeBehavior.cpp
+  FlockingBehavior.cpp
+  FrontierElement.cpp
+  GOAP.cpp
+  GOAPAction.cpp
+  GOAPAction_Aim.cpp
+  GOAPAction_Patrol.cpp
+  Generando código...
+  Compilando...
+  GOAPAction_Shoot.cpp
+  GOAPWorldState.cpp
+  Graph.cpp
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(30,20): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(32,21): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(38,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(38,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(55,20): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(66,20): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(68,21): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(80,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(90,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(116,20): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(128,20): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(130,21): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(142,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(152,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(332,9): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(333,9): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(338,9): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(339,9): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(344,9): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(345,9): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(350,9): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(351,9): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+  Grid.cpp
+  HeuristicCalculator.cpp
+  ManhattanDistance.cpp
+  OctileDistance.cpp
+  PathCalculator.cpp
+  PathFollowing.cpp
+  PriorityBlendingBehavior.cpp
+  SDL_SimpleApp.cpp
   SceneFSM.cpp
+  SceneGOAP.cpp
+  ScenePathFindingMouse.cpp
+  Seek.cpp
+  SeekBehavior.cpp
+  SeparationBehavior.cpp
+  SteeringBehavior.cpp
+  WeightedBlendingBehavior.cpp
   main.cpp
-  Generating Code...
-  SDL_Pathfinding.vcxproj -> C:\Users\ArnauPradas\Desktop\Decision Making\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe
+  Generando código...
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\Graph.cpp(322): warning C4715: 'Graph::CalculateZoneFromPoint': no todas las rutas de acceso de control devuelven un valor
+  Compilando...
+  utils.cpp
+  Generando código...
+  LINK : no se encontró D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\\bin\SDL_Pathfinding.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  SDL_Pathfinding.vcxproj -> D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe
