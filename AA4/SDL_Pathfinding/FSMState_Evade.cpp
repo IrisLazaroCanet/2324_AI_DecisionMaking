@@ -7,16 +7,20 @@ void FSMState_Evade::Enter(Agent* agent, Agent* target)
 
 StateType FSMState_Evade::Update(Agent* agent, Agent* target, float dtime)
 {
-	//Agent deploy state actions / movement
-	agent->getBehavior()->CalculateForces(agent, target, dtime);
+	float distanceToTarget = Vector2D::Distance(agent->getPosition(), target->getPosition());
 
-	//Transitions between states are checked here!
-	//..
+	agent->applySteeringBehavior(target, dtime, agent->getPosition(), false);
 
-	/*
-	* if(should_change_state) return new_state (StateType enum);
-	* else
-	*/
+	if (distanceToTarget < agent->distanceThreshold && target->agentHasGunEquipped == false)
+	{
+		return StateType::CHASE;
+	}
+
+	else if (distanceToTarget > agent->distanceThreshold)
+	{
+		return StateType::PATROL;
+	}
+
 	return StateType::NONE;
 }
 

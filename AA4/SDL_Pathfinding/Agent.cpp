@@ -16,6 +16,7 @@ Agent::Agent() : sprite_texture(0),
 	             sprite_h(0),
 	             draw_sprite(false)
 {
+	setGun(false);
 }
 
 Agent::~Agent()
@@ -61,12 +62,22 @@ float Agent::getMass()
 	return mass;
 }
 
-void Agent::applySteeringBehavior(Agent* target, float dtime)
+void Agent::applySteeringBehavior(Agent* target, float dtime, Vector2D randomPosition, bool moveRandom)
 {
 	//Calculates force and acceleration
-	Vector2D steering_force = steering_behaviour->CalculateForces(this, target, dtime);
 
-	velocity = velocity + steering_force * dtime;
+	if (moveRandom)
+	{
+		Vector2D steering_force = steering_behaviour->CalculateForces(this, randomPosition, dtime);
+		velocity = velocity + steering_force * dtime;
+	}
+
+	if (!moveRandom)
+	{
+		Vector2D steering_force = steering_behaviour->CalculateForces(this, target, dtime);
+		velocity = velocity + steering_force * dtime;
+	}
+
 	velocity = velocity.Truncate(max_velocity);
 
 	position = position + velocity * dtime;
@@ -166,14 +177,35 @@ void Agent::setVelocity(Vector2D _velocity)
 
 void Agent::update(float dtime, SDL_Event *event)
 {
+	if (!isPlayer && canDefineMaxVelocity)
+	{
+		max_velocity = 100;
+		canDefineMaxVelocity = false;
+	}
 
-	//cout << "agent update:" << endl;
+	else if (isPlayer && canDefineMaxVelocity)
+	{	
+		max_velocity = 200;
+		canDefineMaxVelocity = false;
+	
+	}
 
 	switch (event->type) {
 		/* Keyboard & Mouse events */
 	case SDL_KEYDOWN:
 		if (event->key.keysym.scancode == SDL_SCANCODE_SPACE)
 			draw_sprite = !draw_sprite;
+		else if (event->key.keysym.scancode == SDL_SCANCODE_E && !agentHasGunEquipped && isPlayer)
+		{
+			setGun(true);
+			std::cout << "ARMA EQUIPADA" << endl;
+		}
+
+		else if (event->key.keysym.scancode == SDL_SCANCODE_E && agentHasGunEquipped && isPlayer)
+		{
+			setGun(false);
+			std::cout << "ARMA DESEQUIPADA" << endl;
+		}
 		break;
 	default:
 		break;

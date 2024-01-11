@@ -63,6 +63,8 @@ private:
 	int sprite_w;
 	int sprite_h;
 
+	bool canDefineMaxVelocity = true;
+
 public:
 	Agent();
 	~Agent();
@@ -73,7 +75,7 @@ public:
 	float getMaxForce();
 	float getMass();
 
-	void applySteeringBehavior(Agent* target, float dtime);
+	void applySteeringBehavior(Agent* target, float dtime, Vector2D randomPosition, bool moveRandom);
 	void applyPathFollowing(float dtime);
 
 	void addNeighbor(Agent* neighbor) { neighbors.push_back(neighbor); }
@@ -112,6 +114,8 @@ public:
 
 	//Agent has a Gun Equipped logic
 	bool agentHasGunEquipped;
+	float distanceThreshold = 300.f;
+
 	bool getGun()
 	{
 		return agentHasGunEquipped; 

@@ -103,7 +103,6 @@ void SceneFSM::update(float dtime, SDL_Event* event)
 	agents[2]->update(dtime, event);
 
 	//agents[1]->setTarget(agents[0]->getPosition());
-
 }
 
 void SceneFSM::draw()
