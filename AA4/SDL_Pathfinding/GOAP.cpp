@@ -2,6 +2,8 @@
 
 void GOAP::AStar(GOAPWorldState start, GOAPWorldState goal)
 {
+
+    std::printf("\nSTARTING A*\n");
     // Priority queue for open set
     std::priority_queue<GOAPNode, std::vector<GOAPNode>, std::greater<>> openSet;
 
@@ -78,6 +80,7 @@ void GOAP::Update(Agent* agent, Agent* target, float dtime)
 	}
 	else
 	{
+        std::printf("\NOT A*\n");
 		//Deploy an existing plan
 		plan[idxCurrAction]->Update(agent, dtime);
 		//...

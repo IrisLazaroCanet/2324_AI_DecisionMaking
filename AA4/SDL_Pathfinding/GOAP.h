@@ -26,6 +26,7 @@ public:
 	~GOAP();
 	void Update(Agent* agent, Agent* target, float dtime) override;
 
+	//Stuff for A*
 	struct GOAPNode {
 		GOAPWorldState state;
 		GOAPAction* action;
@@ -39,7 +40,8 @@ public:
 
 
 	// Apply an action to generate a successor state
-	GOAPWorldState ApplyAction(const GOAPWorldState& currentState, const GOAPAction* action) {
+	GOAPWorldState ApplyAction(const GOAPWorldState& currentState, const GOAPAction* action) 
+	{
 		GOAPWorldState successorState = currentState;
 		// Apply the preconditions and effects of the action to the successor state
 		for (size_t i = 0; i < action->preconditions.values.size(); ++i) {
@@ -57,8 +59,8 @@ public:
 
 	// Calculate heuristic based on the distance between two world states
 	float CalculateHeuristic(const GOAPWorldState& state, const GOAPWorldState& goal) {
-		// This is a simple example, you may need a more sophisticated heuristic
-		float heuristic = 0.0f;
+		// PLACEHOLDER
+		float heuristic = 1.0f;
 		for (size_t i = 0; i < state.values.size(); ++i) {
 			// Add the squared difference between each value as a simple heuristic
 			heuristic += static_cast<float>((state.values[i] - goal.values[i]) * (state.values[i] - goal.values[i]));
