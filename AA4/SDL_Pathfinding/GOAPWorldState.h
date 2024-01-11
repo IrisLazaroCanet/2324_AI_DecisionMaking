@@ -11,4 +11,16 @@ public:
 	~GOAPWorldState() { }
 	void Set(std::vector<bool> _values);
 	void Clear();
+
+
+	bool GOAPWorldState::operator==(const GOAPWorldState& other) const
+	{
+		return this->values == other.values;
+	}
+
+	bool GOAPWorldState::operator!=(const GOAPWorldState& other) const
+	{
+		return !(*this == other);
+	}
+
 };

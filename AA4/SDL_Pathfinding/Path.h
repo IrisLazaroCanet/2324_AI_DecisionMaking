@@ -2,6 +2,9 @@
 #include <vector>
 #include "Vector2D.h"
 
+#include "GOAPWorldState.h"
+
+
 struct Path
 {
 	std::vector<Vector2D> points;

@@ -1,11 +1,37 @@
-﻿  FSM.cpp
-  FSMState_Chase.cpp
-  FSMState_Evade.cpp
-  FSMState_Patrol.cpp
-C:\Users\ArnauPradas\Desktop\Decision Making\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(25,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\ArnauPradas\Desktop\Decision Making\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(25,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\ArnauPradas\Desktop\Decision Making\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.cpp(35,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  SceneFSM.cpp
+﻿  GOAP.cpp
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAP.h(65,23): error C2676: '<' binario: 'const _Ty2' no define este operador o una conversión a un tipo aceptable para el operador predefinido
+          with
+          [
+              _Ty2=GOAPWorldState
+          ]
+D:\ProgramasUni\VS\VC\Tools\MSVC\14.37.32822\include\xutility(1354,44): message : Vea la referencia a la creación de una instancia de la función plantilla "bool GOAP::CustomComparator::operator ()<float,GOAPWorldState>(const std::pair<float,GOAPWorldState> &,const std::pair<float,GOAPWorldState> &) const" que se está compilando
+D:\ProgramasUni\VS\VC\Tools\MSVC\14.37.32822\include\algorithm(6328,26): message : Vea la referencia a la creación de una instancia de la función plantilla "bool std::_Debug_lt_pred<_Pr&,std::pair<float,GOAPWorldState>&,_Ty&,0>(GOAP::CustomComparator&,_Ty1,_Ty2) noexcept(false)" que se está compilando
+          with
+          [
+              _Pr=GOAP::CustomComparator,
+              _Ty=std::pair<float,GOAPWorldState>,
+              _Ty1=std::pair<float,GOAPWorldState> &,
+              _Ty2=std::pair<float,GOAPWorldState> &
+          ]
+D:\ProgramasUni\VS\VC\Tools\MSVC\14.37.32822\include\algorithm(6348,14): message : Vea la referencia a la creación de una instancia de la función plantilla "void std::_Push_heap_by_index<std::pair<float,GOAPWorldState>*,std::pair<float,GOAPWorldState>,_Fn>(_RanIt,int,int,_Ty &&,_Pr)" que se está compilando
+          with
+          [
+              _Fn=GOAP::CustomComparator,
+              _RanIt=std::pair<float,GOAPWorldState> *,
+              _Ty=std::pair<float,GOAPWorldState>,
+              _Pr=GOAP::CustomComparator
+          ]
+D:\ProgramasUni\VS\VC\Tools\MSVC\14.37.32822\include\queue(380,14): message : Vea la referencia a la creación de una instancia de la función plantilla "void std::push_heap<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,_Pr>(_RanIt,_RanIt,_Pr)" que se está compilando
+          with
+          [
+              _Ty=std::pair<float,GOAPWorldState>,
+              _Pr=GOAP::CustomComparator,
+              _RanIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::pair<float,GOAPWorldState>>>>
+          ]
+D:\ProgramasUni\VS\VC\Tools\MSVC\14.37.32822\include\queue(378,10): message : al compilar la función del miembro clase plantilla "void std::priority_queue<std::pair<float,GOAPWorldState>,std::vector<std::pair<float,GOAPWorldState>,std::allocator<std::pair<float,GOAPWorldState>>>,GOAP::CustomComparator>::push(std::pair<float,GOAPWorldState> &&)"
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAP.cpp(16,12): message : vea la primera referencia a “std::priority_queue<std::pair<float,GOAPWorldState>,std::vector<std::pair<float,GOAPWorldState>,std::allocator<std::pair<float,GOAPWorldState>>>,GOAP::CustomComparator>::push” en “GOAP::AStar”
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAP.cpp(6,124): message : Vea la referencia a la creación de una instancia de clase plantilla "std::priority_queue<std::pair<float,GOAPWorldState>,std::vector<std::pair<float,GOAPWorldState>,std::allocator<std::pair<float,GOAPWorldState>>>,GOAP::CustomComparator>" que se está compilando
   main.cpp
-  Generating Code...
-  SDL_Pathfinding.vcxproj -> C:\Users\ArnauPradas\Desktop\Decision Making\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe
+  SceneGOAP.cpp
+  WeightedBlendingBehavior.cpp
+  Generando código...
