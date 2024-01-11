@@ -17,7 +17,6 @@ SceneFSM::SceneFSM()
 	//player->setBehavior(new PathFollowing);
 	player->setIsPlayer(true);
 	//player->setTarget(Vector2D(-20, -20));
-	player->agentHasGunEquipped = true;
 	agents.push_back(player);
 
 	// set agent position coords to the center of a random cell

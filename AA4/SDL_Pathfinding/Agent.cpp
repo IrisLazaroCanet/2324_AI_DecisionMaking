@@ -16,6 +16,7 @@ Agent::Agent() : sprite_texture(0),
 	             sprite_h(0),
 	             draw_sprite(false)
 {
+	setGun(false);
 }
 
 Agent::~Agent()
@@ -196,13 +197,13 @@ void Agent::update(float dtime, SDL_Event *event)
 			draw_sprite = !draw_sprite;
 		else if (event->key.keysym.scancode == SDL_SCANCODE_E && !agentHasGunEquipped && isPlayer)
 		{
-			agentHasGunEquipped = true;
+			setGun(true);
 			std::cout << "ARMA EQUIPADA" << endl;
 		}
 
 		else if (event->key.keysym.scancode == SDL_SCANCODE_E && agentHasGunEquipped && isPlayer)
 		{
-			agentHasGunEquipped = false;
+			setGun(false);
 			std::cout << "ARMA DESEQUIPADA" << endl;
 		}
 		break;
