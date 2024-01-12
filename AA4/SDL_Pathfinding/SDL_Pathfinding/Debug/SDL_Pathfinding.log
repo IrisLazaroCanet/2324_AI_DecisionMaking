@@ -1,2 +1,6 @@
-﻿  SceneGOAP.cpp
+﻿  GOAP.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAP.cpp(91,21): warning C4129: 'N': unrecognized character escape sequence
+  SceneGOAP.cpp
+  main.cpp
+  Generating Code...
   SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA4\2324_AI_DecisionMaking\AA4\bin\SDL_Pathfinding.exe

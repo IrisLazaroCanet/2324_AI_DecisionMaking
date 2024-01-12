@@ -82,6 +82,9 @@ void GOAP::Update(Agent* agent, Agent* target, float dtime)
 	if (plan.empty())
 	{
 		AStar(start, goal);
+
+        //Test
+        plan.push_back(new GOAPAction_GetCoin());
 	}
 	else
 	{
@@ -94,4 +97,44 @@ void GOAP::Update(Agent* agent, Agent* target, float dtime)
 		//	- reset plan?
 		//...
 	}
+}
+
+GOAPWorldState GOAP::ApplyAction(const GOAPWorldState& currentState, const GOAPAction* action)
+{
+    GOAPWorldState successorState = currentState;
+
+    // Apply the preconditions and effects of the action to the successor state
+    for (const auto& precond : action->preconditions.facts)
+    {
+        successorState.SetFact(precond.first, precond.second);
+    }
+
+    for (const auto& effect : action->effects.facts)
+    {
+        successorState.SetFact(effect.first, effect.second);
+    }
+
+    return successorState;
+}
+
+float GOAP::CalculateHeuristic(const GOAPWorldState& state, const GOAPWorldState& goal)
+{
+    float heuristic = 0.0f;
+
+    // Iterate over all facts in the states
+    for (const auto& stateFact : state.facts)
+    {
+        FactKey key = stateFact.first;
+        int stateValue = stateFact.second;
+
+        // Check if the fact is present in the goal state and has a different value
+        auto goalFactIt = goal.facts.find(key);
+        if (goalFactIt != goal.facts.end() && goalFactIt->second != stateValue)
+        {
+            // Increase the heuristic value
+            heuristic += 1.0f;
+        }
+    }
+
+    return heuristic;
 }

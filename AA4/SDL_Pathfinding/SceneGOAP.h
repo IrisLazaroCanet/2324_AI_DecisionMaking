@@ -34,7 +34,8 @@ private:
 	bool draw_grid;
 
 	//GOAP
-	GOAPWorldState* currentWorldState;
+	GOAPWorldState currentWorldState;
+	GOAPWorldState goalWorldState;
 		
 	void drawMaze();
 	void drawCoin();
@@ -44,6 +45,7 @@ private:
 	bool loadTextures(char* filename_bg, char* filename_coin, char* filename_keys);
 
 	//GOAP
+	void InitScene();
 	void InitGOAPWorldState();
 
 };

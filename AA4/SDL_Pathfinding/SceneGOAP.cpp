@@ -10,7 +10,7 @@ SceneGOAP::SceneGOAP()
 	maze = new Grid("../res/maze_rooms.csv");
 	graph = new Graph(maze);
 
-	currentWorldState = new GOAPWorldState();
+	currentWorldState = GOAPWorldState();
 	
 	loadTextures("../res/maze.png", "../res/coin.png", "../res/keys.png");
 
@@ -23,29 +23,7 @@ SceneGOAP::SceneGOAP()
 	//agent->setTarget(Vector2D(-20,-20));
 	agents.push_back(agent);
 
-	// set agent position coords to the center of a random cell in the Black room
-	Vector2D rand_cell(-1,-1);
-	while ((!maze->isValidCell(rand_cell)) || (maze->getCellValue(rand_cell) != Color::Black))
-		rand_cell = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-	agents[0]->setPosition(maze->cell2pix(rand_cell));
-
-	// set the coin in a random cell (but not in the Black room)
-	coinPosition = Vector2D(-1,-1);
-	while ((!maze->isValidCell(coinPosition)) || (maze->getCellValue(coinPosition) == Color::Black))
-		coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-
-	// set keys in in a random cell (but not in the room of its same color)
-	for (int i=Color::Red; i<8; i++)
-	{
-		keyPositions[i] = Vector2D(-1,-1);
-		while ((!maze->isValidCell(keyPositions[i])) || (maze->getCellValue(keyPositions[i]) == i))
-		{
-			keyPositions[i] = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-			currentWorldState->SetFact(static_cast<FactKey>(i), maze->getCellValue(keyPositions[i]));
-		}
-	}
-
-	InitGOAPWorldState();
+	InitScene();
 
 }
 
@@ -93,16 +71,19 @@ void SceneGOAP::update(float dtime, SDL_Event *event)
 		if (maze->pix2cell(agents[0]->getPosition()) == coinPosition)
 		{
 			cout << "The Agent achieved its GOAL!." << endl;
-			// nothing to do here but clear the coin position (set coinPosition to -1,-1)
-			coinPosition = Vector2D(-1,-1);
+			currentWorldState.SetFact(has_coin, 1);
+			
+			//Reset scene
+			InitScene();
 		}
 		for (int i=Color::Red; i<8; i++)
 		{
 			if (maze->pix2cell(agents[0]->getPosition()) == keyPositions[i])
 			{
 				cout << "Now the Agent has the " << color_strings[i] << " Key." << endl;
+				currentWorldState.SetFact(static_cast<FactKey>(i), 1);
 				// clear the key texture (set key position to -1,-1)
-				keyPositions[i] = Vector2D(-1,-1);
+				//keyPositions[i] = Vector2D(-1,-1);
 			}
 		}
 	}
@@ -248,14 +229,46 @@ bool SceneGOAP::loadTextures(char* filename_bg, char* filename_coin, char* filen
 	return true;
 }
 
+void SceneGOAP::InitScene()
+{
+	// set agent position coords to the center of a random cell in the Black room
+	Vector2D rand_cell(-1, -1);
+	while ((!maze->isValidCell(rand_cell)) || (maze->getCellValue(rand_cell) != Color::Black))
+		rand_cell = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
+	agents[0]->setPosition(maze->cell2pix(rand_cell));
+
+	// set the coin in a random cell (but not in the Black room)
+	coinPosition = Vector2D(-1, -1);
+	while ((!maze->isValidCell(coinPosition)) || (maze->getCellValue(coinPosition) == Color::Black))
+		coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
+
+	// set keys in in a random cell (but not in the room of its same color)
+	for (int i = Color::Red; i < 8; i++)
+	{
+		keyPositions[i] = Vector2D(-1, -1);
+		while ((!maze->isValidCell(keyPositions[i])) || (maze->getCellValue(keyPositions[i]) == i))
+		{
+			keyPositions[i] = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
+			currentWorldState.SetFact(static_cast<FactKey>(i), maze->getCellValue(keyPositions[i]));
+		}
+	}
+
+	InitGOAPWorldState();
+
+	reinterpret_cast<GOAP*>(agents[0]->getBrain())->SetStartState(currentWorldState);
+	reinterpret_cast<GOAP*>(agents[0]->getBrain())->SetGoalState(goalWorldState);
+}
+
 void SceneGOAP::InitGOAPWorldState()
 {
 	//Agent related facts
-	currentWorldState->SetFact(has_coin, 0);
-	currentWorldState->SetFact(has_yellow_key, 0);
-	currentWorldState->SetFact(has_green_key, 0);
-	currentWorldState->SetFact(has_red_key, 0);
-	currentWorldState->SetFact(has_blue_key, 0);
-	currentWorldState->SetFact(has_orange_key, 0);
-	currentWorldState->SetFact(agent_room, Color::Black);
+	currentWorldState.SetFact(has_coin, 0);
+	currentWorldState.SetFact(has_yellow_key, 0);
+	currentWorldState.SetFact(has_green_key, 0);
+	currentWorldState.SetFact(has_red_key, 0);
+	currentWorldState.SetFact(has_blue_key, 0);
+	currentWorldState.SetFact(has_orange_key, 0);
+	currentWorldState.SetFact(agent_room, Color::Black);
+
+	goalWorldState.SetFact(has_coin, 1);
 }

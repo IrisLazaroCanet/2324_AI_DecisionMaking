@@ -1,7 +1,7 @@
 #pragma once
 #include "GOAPAction.h"
 
-class GOAPAction_GetCoin : GOAPAction
+class GOAPAction_GetCoin : public GOAPAction
 {
 public:
 	GOAPAction_GetCoin();

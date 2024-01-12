@@ -6,7 +6,7 @@ GOAPAction_GetBlueKey::GOAPAction_GetBlueKey()
 
 	effects.SetFact(has_blue_key, 1);
 
-	//cost = algo
+	cost = 1.0f;
 
 	//TODO: Com expressar en fact que l'agent està a la mateixa room que la coin / pot accedir a la coin?
 }

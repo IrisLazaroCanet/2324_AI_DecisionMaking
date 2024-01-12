@@ -1,7 +1,7 @@
 #pragma once
 #include "GOAPAction.h"
 
-class GOAPAction_GetRedKey : GOAPAction
+class GOAPAction_GetRedKey : public GOAPAction
 {
 public:
 	GOAPAction_GetRedKey();
