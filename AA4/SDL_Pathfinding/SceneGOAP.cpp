@@ -39,9 +39,11 @@ SceneGOAP::SceneGOAP()
 		while ((!maze->isValidCell(keyPositions[i])) || (maze->getCellValue(keyPositions[i]) == i))
 		{
 			keyPositions[i] = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-			currentWorldState->SetFact(static_cast<FactKey>(i), i);
+			currentWorldState->SetFact(static_cast<FactKey>(i), maze->getCellValue(keyPositions[i]));
 		}
 	}
+
+	InitGOAPWorldState();
 
 }
 
