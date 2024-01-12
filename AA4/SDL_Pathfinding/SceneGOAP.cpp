@@ -71,7 +71,7 @@ void SceneGOAP::update(float dtime, SDL_Event *event)
 		if (maze->pix2cell(agents[0]->getPosition()) == coinPosition)
 		{
 			cout << "The Agent achieved its GOAL!." << endl;
-			currentWorldState.SetFact(has_coin, 1);
+			currentWorldState.SetFact(has_coin, 1);	//This should be done by GOAP (effect of GOAPAction)
 			
 			//Reset scene
 			InitScene();
@@ -81,7 +81,7 @@ void SceneGOAP::update(float dtime, SDL_Event *event)
 			if (maze->pix2cell(agents[0]->getPosition()) == keyPositions[i])
 			{
 				cout << "Now the Agent has the " << color_strings[i] << " Key." << endl;
-				currentWorldState.SetFact(static_cast<FactKey>(i), 1);
+				currentWorldState.SetFact(static_cast<FactKey>(i), 1); //This should be done by GOAP (effect of GOAPAction)
 				// clear the key texture (set key position to -1,-1)
 				//keyPositions[i] = Vector2D(-1,-1);
 			}
