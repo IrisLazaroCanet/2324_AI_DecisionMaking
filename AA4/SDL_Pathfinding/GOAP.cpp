@@ -2,13 +2,12 @@
 
 void GOAP::AStar(GOAPWorldState start, GOAPWorldState goal)
 {
-
     std::printf("\nSTARTING A*\n");
     // Priority queue for open set
-    std::priority_queue<GOAPNode, std::vector<GOAPNode>, std::greater<>> openSet;
+    std::priority_queue<GOAPNode, std::vector<GOAPNode>, std::greater<GOAPNode>> openSet;
 
     // Closed set to keep track of visited nodes
-    std::unordered_map<std::vector<bool>, GOAPNode> closedSet;
+    std::unordered_map<std::map<FactKey, int>, GOAPNode, FactKeyHash> closedSet;
 
     // Initialize the start node
     GOAPNode startNode;
@@ -20,26 +19,31 @@ void GOAP::AStar(GOAPWorldState start, GOAPWorldState goal)
     // Add the start node to the open set
     openSet.push(startNode);
 
-    while (!openSet.empty()) {
+    while (!openSet.empty())
+    {
         // Get the node with the lowest f value from the open set
         GOAPNode currentNode = openSet.top();
         openSet.pop();
 
         // Check if the current node is the goal
-        if (currentNode.state.values == goal.values) {
+        if (currentNode.state.facts == goal.facts)
+        {
             // Reconstruct the plan
             plan.clear();
-            while (currentNode.action != nullptr) {
+            while (currentNode.action != nullptr)
+            {
                 plan.insert(plan.begin(), currentNode.action);
-                currentNode = closedSet[currentNode.state.values];
+                currentNode = closedSet[currentNode.state.facts];
             }
             return;  // Plan found
         }
 
         // Generate successor nodes
-        for (auto& kv : actions) {
+        for (auto& kv : actions)
+        {
             GOAPAction* action = kv.second;
-            if (action->IsAchievable(currentNode.state)) {
+            if (action->IsAchievable(currentNode.state))
+            {
                 GOAPNode successor;
                 successor.state = ApplyAction(currentNode.state, action);
                 successor.action = action;
@@ -47,13 +51,14 @@ void GOAP::AStar(GOAPWorldState start, GOAPWorldState goal)
                 successor.heuristic = CalculateHeuristic(successor.state, goal);
 
                 // Check if the successor is not in the closed set or open set with a lower cost
-                if (closedSet.find(successor.state.values) == closedSet.end() ||
-                    successor.cost < closedSet[successor.state.values].cost) {
+                auto closedSetIt = closedSet.find(successor.state.facts);
+                if (closedSetIt == closedSet.end() || successor.cost < closedSetIt->second.cost)
+                {
                     // Add the successor to the open set
                     openSet.push(successor);
 
                     // Update or insert into closed set
-                    closedSet[successor.state.values] = successor;
+                    closedSet[successor.state.facts] = successor;
                 }
             }
         }

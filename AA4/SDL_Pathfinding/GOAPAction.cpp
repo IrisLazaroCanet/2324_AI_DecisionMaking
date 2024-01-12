@@ -1,21 +1,27 @@
 #include "GOAPAction.h"
 
-void GOAPAction::SetPreconditions(int idx, bool value)
+void GOAPAction::SetPreconditions(FactKey key, int value)
 {
-	preconditions.values[idx] = value;
+    preconditions.facts[key] = value;
 }
 
-void GOAPAction::SetEffect(int idx, bool value)
+void GOAPAction::SetEffect(FactKey key, int value)
 {
-	effects.values[idx] = value;
+    effects.facts[key] = value;
 }
 
 bool GOAPAction::IsAchievable(const GOAPWorldState& worldState) const
 {
-    for (size_t i = 0; i < preconditions.values.size(); ++i)
+    for (const auto& precond : preconditions.facts)
     {
-        if (preconditions.values[i] && !worldState.values[i])
+        FactKey key = precond.first;
+        int precondValue = precond.second;
+
+        auto worldStateIt = worldState.facts.find(key);
+        if (worldStateIt == worldState.facts.end() || worldStateIt->second != precondValue)
+        {
             return false;
+        }
     }
     return true;
 }

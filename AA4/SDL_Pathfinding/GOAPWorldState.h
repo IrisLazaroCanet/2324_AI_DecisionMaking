@@ -27,13 +27,16 @@ enum FactKey
 class GOAPWorldState
 {
 public:
-	//std::vector<bool> values;
-	//std::vector<bool> mask;
 	std::map<FactKey, int> facts;
 
 	GOAPWorldState() { }
 	~GOAPWorldState() { }
-	//void Set(std::vector<bool> _values);
 	void SetFact(FactKey key, int value);
+	int GetFact(FactKey key) const;
 	void Clear();
+
+	//UNUSED
+	//std::vector<bool> values;
+	//std::vector<bool> mask;
+	//void Set(std::vector<bool> _values);
 };

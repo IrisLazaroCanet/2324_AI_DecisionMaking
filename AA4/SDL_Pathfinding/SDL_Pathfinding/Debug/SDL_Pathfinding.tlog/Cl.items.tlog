@@ -17,6 +17,9 @@ D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\FSMState_Patrol.c
 D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAP.cpp;D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SDL_Pathfinding\Debug\GOAP.obj
 D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAPAction.cpp;D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SDL_Pathfinding\Debug\GOAPAction.obj
 D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAPAction_Aim.cpp;D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SDL_Pathfinding\Debug\GOAPAction_Aim.obj
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAPAction_GetBlueKey.cpp;D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SDL_Pathfinding\Debug\GOAPAction_GetBlueKey.obj
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAPAction_GetCoin.cpp;D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SDL_Pathfinding\Debug\GOAPAction_GetCoin.obj
+D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAPAction_GetRedKey.cpp;D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SDL_Pathfinding\Debug\GOAPAction_GetRedKey.obj
 D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAPAction_Patrol.cpp;D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SDL_Pathfinding\Debug\GOAPAction_Patrol.obj
 D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAPAction_Shoot.cpp;D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SDL_Pathfinding\Debug\GOAPAction_Shoot.obj
 D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\GOAPWorldState.cpp;D:\GitRepos\IA_CDI3\2324_AI_DecisionMaking\AA4\SDL_Pathfinding\SDL_Pathfinding\Debug\GOAPWorldState.obj

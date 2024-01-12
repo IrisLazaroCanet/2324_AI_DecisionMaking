@@ -43,41 +43,58 @@ public:
 	GOAPWorldState ApplyAction(const GOAPWorldState& currentState, const GOAPAction* action) 
 	{
 		GOAPWorldState successorState = currentState;
+
 		// Apply the preconditions and effects of the action to the successor state
-		for (size_t i = 0; i < action->preconditions.values.size(); ++i) {
-			if (action->preconditions.mask[i]) {
-				successorState.values[i] = action->preconditions.values[i];
-			}
+		for (const auto& precond : action->preconditions.facts)
+		{
+			successorState.SetFact(precond.first, precond.second);
 		}
-		for (size_t i = 0; i < action->effects.values.size(); ++i) {
-			if (action->effects.mask[i]) {
-				successorState.values[i] = action->effects.values[i];
-			}
+
+		for (const auto& effect : action->effects.facts)
+		{
+			successorState.SetFact(effect.first, effect.second);
 		}
+
 		return successorState;
 	}
 
 	// Calculate heuristic based on the distance between two world states
-	float CalculateHeuristic(const GOAPWorldState& state, const GOAPWorldState& goal) {
-		
-		//Heurística
-		//Cada cop que canviï una variable entre els dos estats, +1
-		//Els estats q ha d'utilitzar són: currentState i goalState (currentState va variant segons A* va avançant)
+	float CalculateHeuristic(const GOAPWorldState& state, const GOAPWorldState& goal) 
+	{
+		float heuristic = 0.0f;
 
-		//TODO: Iterar state.facts i goal.facts
-		//if(state.facts[somekey] == goal.facts[somekey])
-		//	heuristic += 1.0f;
+		// Iterate over all facts in the states
+		for (const auto& stateFact : state.facts)
+		{
+			FactKey key = stateFact.first;
+			int stateValue = stateFact.second;
 
-		//D'aquesta manera, com més diferència hi hagi entre state i goal, més costosa (alta) serà l'heurística
-
-
-		// PLACEHOLDER
-		float heuristic = 1.0f;
-		for (size_t i = 0; i < state.values.size(); ++i) {
-			// Add the squared difference between each value as a simple heuristic
-			heuristic += static_cast<float>((state.values[i] - goal.values[i]) * (state.values[i] - goal.values[i]));
+			// Check if the fact is present in the goal state and has a different value
+			auto goalFactIt = goal.facts.find(key);
+			if (goalFactIt != goal.facts.end() && goalFactIt->second != stateValue)
+			{
+				// Increase the heuristic value
+				heuristic += 1.0f;
+			}
 		}
+
 		return heuristic;
 	}
 
+	// This struct provides a hash function for std::map<FactKey, int>.
+	// It allows efficient hashing of the map-based representation of GOAPWorldState for use in unordered containers,
+	//Used for the std::unordered_map, which is utilized in the A* algorithm to keep track of visited nodes.
+	struct FactKeyHash {
+		size_t operator()(const std::map<FactKey, int>& facts) const {
+			size_t hash = 0;
+			// Iterate over each key-value pair in the map
+			for (const auto& pair : facts) 
+			{
+				// Combine the hash values of the key and value using a bitwise XOR operation
+				hash ^= std::hash<FactKey>()(pair.first) + std::hash<int>()(pair.second) + 0x9e3779b9 + (hash << 6) + (hash >> 2);
+			}
+			// Return the final combined hash value
+			return hash;
+		}
+	};
 };
