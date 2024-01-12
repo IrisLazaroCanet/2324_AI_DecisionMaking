@@ -12,6 +12,9 @@
 #include "Graph.h"
 #include "GOAP.h"
 
+//White equival a null
+enum Color { White = 0, Black, Red, Orange, Yellow, Green, Blue, Purple };
+
 class SceneGOAP :
 	public Scene
 {
@@ -29,6 +32,9 @@ private:
 	Graph* graph;
 	Grid *maze;
 	bool draw_grid;
+
+	//GOAP
+	GOAPWorldState* currentWorldState;
 		
 	void drawMaze();
 	void drawCoin();
@@ -36,5 +42,8 @@ private:
 	SDL_Texture *coin_texture;
 	SDL_Texture *keys_texture;
 	bool loadTextures(char* filename_bg, char* filename_coin, char* filename_keys);
+
+	//GOAP
+	void InitGOAPWorldState();
 
 };

@@ -59,6 +59,12 @@ public:
 
 	// Calculate heuristic based on the distance between two world states
 	float CalculateHeuristic(const GOAPWorldState& state, const GOAPWorldState& goal) {
+		//Heurística
+		//Cada cop que canviï una variable entre els dos estats, +1
+		//Els estats q ha d'utilitzar són: currentState i goalState (currentState va variant segons A* va avançant)
+
+
+
 		// PLACEHOLDER
 		float heuristic = 1.0f;
 		for (size_t i = 0; i < state.values.size(); ++i) {

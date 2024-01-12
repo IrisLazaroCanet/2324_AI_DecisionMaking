@@ -2,7 +2,6 @@
 
 using namespace std;
 
-enum Color { White=0, Black, Red, Orange, Yellow, Green, Blue, Purple};
 char *color_strings[8] = {"White", "Black", "Red", "Orange", "Yellow", "Green", "Blue", "Purple"};
 
 SceneGOAP::SceneGOAP()
@@ -38,7 +37,10 @@ SceneGOAP::SceneGOAP()
 	{
 		keyPositions[i] = Vector2D(-1,-1);
 		while ((!maze->isValidCell(keyPositions[i])) || (maze->getCellValue(keyPositions[i]) == i))
+		{
 			keyPositions[i] = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
+			currentWorldState->SetFact(static_cast<FactKey>(i), i);
+		}
 	}
 
 }
@@ -240,4 +242,16 @@ bool SceneGOAP::loadTextures(char* filename_bg, char* filename_coin, char* filen
 
 
 	return true;
+}
+
+void SceneGOAP::InitGOAPWorldState()
+{
+	//Agent related facts
+	currentWorldState->SetFact(has_coin, 0);
+	currentWorldState->SetFact(has_yellow_key, 0);
+	currentWorldState->SetFact(has_green_key, 0);
+	currentWorldState->SetFact(has_red_key, 0);
+	currentWorldState->SetFact(has_blue_key, 0);
+	currentWorldState->SetFact(has_orange_key, 0);
+	currentWorldState->SetFact(agent_room, Color::Black);
 }
