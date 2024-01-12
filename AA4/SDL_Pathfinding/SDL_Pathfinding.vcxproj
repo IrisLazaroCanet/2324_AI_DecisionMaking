@@ -150,6 +150,9 @@
     <ClCompile Include="GOAP.cpp" />
     <ClCompile Include="GOAPAction.cpp" />
     <ClCompile Include="GOAPAction_Aim.cpp" />
+    <ClCompile Include="GOAPAction_GetBlueKey.cpp" />
+    <ClCompile Include="GOAPAction_GetCoin.cpp" />
+    <ClCompile Include="GOAPAction_GetRedKey.cpp" />
     <ClCompile Include="GOAPAction_Patrol.cpp" />
     <ClCompile Include="GOAPAction_Shoot.cpp" />
     <ClCompile Include="GOAPWorldState.cpp" />
@@ -191,6 +194,9 @@
     <ClInclude Include="GOAP.h" />
     <ClInclude Include="GOAPAction.h" />
     <ClInclude Include="GOAPAction_Aim.h" />
+    <ClInclude Include="GOAPAction_GetBlueKey.h" />
+    <ClInclude Include="GOAPAction_GetCoin.h" />
+    <ClInclude Include="GOAPAction_GetRedKey.h" />
     <ClInclude Include="GOAPAction_Patrol.h" />
     <ClInclude Include="GOAPAction_Shoot.h" />
     <ClInclude Include="GOAPWorldState.h" />

@@ -186,6 +186,15 @@
     <ClCompile Include="SceneGOAP.cpp">
       <Filter>Source Files\GOAP</Filter>
     </ClCompile>
+    <ClCompile Include="GOAPAction_GetCoin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GOAPAction_GetRedKey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GOAPAction_GetBlueKey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -331,6 +340,15 @@
     </ClInclude>
     <ClInclude Include="PathCalculator.h">
       <Filter>Header Files\Pathfinding\Search algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="GOAPAction_GetCoin.h">
+      <Filter>Header Files\GOAP</Filter>
+    </ClInclude>
+    <ClInclude Include="GOAPAction_GetRedKey.h">
+      <Filter>Header Files\GOAP</Filter>
+    </ClInclude>
+    <ClInclude Include="GOAPAction_GetBlueKey.h">
+      <Filter>Header Files\GOAP</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
