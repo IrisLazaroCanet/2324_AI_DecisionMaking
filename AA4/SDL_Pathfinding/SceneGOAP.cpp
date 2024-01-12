@@ -10,6 +10,8 @@ SceneGOAP::SceneGOAP()
 	maze = new Grid("../res/maze_rooms.csv");
 	graph = new Graph(maze);
 
+	currentWorldState = new GOAPWorldState();
+	
 	loadTextures("../res/maze.png", "../res/coin.png", "../res/keys.png");
 
 	srand((unsigned int)time(NULL));
